@@ -1,0 +1,35 @@
+@import './variables.scss';
+
+.action {
+    padding: 22px 50px;
+    transition: background-color $fast, color $fast;
+
+    &.main {
+        font-weight: 400;
+        font-size: 17px;
+        letter-spacing: 0.02em;
+        background-color: $brand-color-green;
+        color: $white;
+
+        &:hover {
+            background-color: $brand-color-dark-green;
+        }
+    }
+
+    &.arrow {
+        padding: 16px 27px;
+        background-color: rgba(110, 156, 159, 0.1);
+
+        svg path {
+            transition: stroke $fast;
+        }
+
+        &:hover {
+            background-color: $brand-color-dark-green;
+            
+            svg path {
+                stroke: $white;
+            }
+        }
+    }
+}
