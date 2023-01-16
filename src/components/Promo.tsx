@@ -24,6 +24,8 @@ export const Promo: React.FC = () => {
                     </div>
                 </div>
                 <div className="promo-image-slider">
+                    <img src="/images/promo/decorate-1.jpg" alt="Decorate Promo" className="promo-decorate promo-decorate-first" />
+                    <img src="/images/promo/decorate-2.jpg" alt="Decorate Promo" className="promo-decorate promo-decorate-second" />
                     <SwiperPromo imgContent={imgContent} text={false} setThumbsSwiper={setThumbsSwiper}/>
                 </div>
             </div>
