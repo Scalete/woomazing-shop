@@ -6,6 +6,31 @@
     }
 }
 
+@mixin hover-underline-animation {
+    .hover-underline-animation, .header-logo span {
+        display: inline-block;
+        position: relative;
+    }
+      
+    .hover-underline-animation::after, .header-logo span::after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        transform: scaleX(0);
+        height: 1px;
+        bottom: 0;
+        left: 0;
+        background-color: $black;
+        transform-origin: bottom right;
+        transition: transform 0.25s ease-out;
+    }
+    
+    .hover-underline-animation:hover::after, .header-logo:hover span::after {
+        transform: scaleX(1);
+        transform-origin: bottom left;
+    }
+}
+
 // resize mixin for value
 // Example:
 // margin: 0 auto res(31, 64) - margin: 0 auto calc(64px + (31 - 64) * ((100vw - 375px) / (1440 - 375)))

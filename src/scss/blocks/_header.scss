@@ -1,0 +1,123 @@
+.header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: transparent;
+    z-index: 3;
+    transition: background $normal, box-shadow $normal;
+    
+    @include hover-underline-animation;
+
+    &.active {
+        background: $white;
+        box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.05);
+    }
+
+    .container {
+        padding: 34px 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &-logo {
+
+        a {
+            display: flex;
+            align-items: center;
+        }
+
+        span {
+            margin-left: 15px;
+            font-size: 16px;
+            line-height: 1.18;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+        }
+    }
+
+    .menu {
+        display: flex;
+        align-items: center;
+
+        li {
+            margin-right: 45px;
+
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+
+        a {
+            font-weight: 400;
+            font-size: 15px;
+            line-height: 1.4;
+            letter-spacing: 0.02em;
+            transition: color $fast;
+
+            &:hover {
+                color: $brand-color-green;
+            }
+
+            &.active {
+                font-weight: 700;
+                color: $brand-color-green;
+            }
+        }
+    }
+
+    &-actions {
+        display: flex;
+        align-items: center;
+
+        .phone-icon {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 27px;
+            height: 27px;
+            margin-right: 9px;
+            transition: background-color $fast;
+
+            svg path {
+                transition: fill $fast;
+            }
+
+            &:hover {
+                background-color: $brand-color-green;
+
+                svg path {
+                    fill: $white;
+                }
+            }
+        }
+    }
+
+    &-contacts {
+        display: flex;
+        align-items: center;
+        
+        font-weight: 400;
+        font-size: 15px;
+        line-height: 1.4;
+        letter-spacing: 0.02em;
+    }
+
+    &-basket {
+        position: relative;
+        margin-left: 67px;
+
+        span {
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            padding: 3px 5px;
+            font-weight: 400;
+            font-size: 9px;
+            letter-spacing: 0.02em;
+            color: $white;
+            background-color: $brand-color-dark-gray;
+            border-radius: 50%;
+        }
+    }
+}
