@@ -1,0 +1,26 @@
+.functions {
+    margin-bottom: 130px;
+
+    &-wrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 75px;
+
+        svg {
+            margin-bottom: 37px;
+        }
+
+        h3 {
+            margin-bottom: 24px;
+            font-size: 25px;
+            line-height: 1.4;
+            letter-spacing: 0.02em;
+        }
+
+        p {
+            font-size: 17px;
+            line-height: 1.4;
+        }
+    }
+}
