@@ -1,5 +1,5 @@
 import React from 'react';
-import SwiperPromo from './Swiper/Swiper';
+import SwiperPromo from './Swiper/SwiperPromo';
 import { Link } from 'react-router-dom';
 
 export const Promo: React.FC = () => {

@@ -1,0 +1,79 @@
+.title-products {
+    margin-top: 130px;
+
+    h2 {
+        margin-bottom: 92px;
+        font-size: 40px;
+        line-height: 1.1;
+        letter-spacing: 0.02em;
+    }
+
+    h4 {
+        margin: 24px 0 7px;
+        font-size: 20px;
+        line-height: 1.4;
+        letter-spacing: 0.02em;
+    }
+
+    p {
+        font-size: 15px;
+        line-height: 1.4;
+        color: $brand-color-dark-gray;
+
+        span {
+            margin-right: 10px;
+            text-decoration: line-through;
+        }
+    }
+
+    &-wrapper {
+        display: flex;
+        gap: 30px;
+        text-align: center;
+    }
+
+    &-img {
+        position: relative;
+
+        svg {
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .product-hover-overlay {
+            width: 100%;
+            height: 100%;
+            background-color: rgba(110, 156, 159, 0.77);
+        }
+
+        svg, .product-hover-overlay {
+            position: absolute;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity $fast, visibility $fast;
+        }
+    }
+
+    &-item {
+
+        &:hover {
+
+            svg {
+                opacity: 1;
+                visibility: visible;
+            }
+
+            .product-hover-overlay {
+                opacity: 1;
+                visibility: visible;
+            }
+        }
+    }
+
+    .action {
+        display: block;
+        max-width: 247px;
+        margin: 65px auto 0;
+    }
+}
