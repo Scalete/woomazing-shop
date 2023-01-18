@@ -3,7 +3,7 @@ import { Product } from './Product';
 
 export const TitleProducts = () => {
     return (
-        <div className="title-products">
+        <section className="title-products">
             <div className="container">
                 <h2 className='second-title'>Новая коллекция</h2>
                 <ul className="title-products-wrapper">
@@ -13,6 +13,6 @@ export const TitleProducts = () => {
                 </ul>
                 <a href="#" className="action second">Открыть магазин</a>
             </div>
-        </div>
+        </section>
     );
 };

@@ -1,0 +1,55 @@
+.footer {
+    padding: 101px 0;
+    background-color: $promo-color-overlay;
+
+    .container {
+        display: flex;
+    }
+
+    .logo {
+        margin-bottom: 70px;
+    }
+
+    &-copyright p {
+        margin-bottom: 6px;
+        font-weight: 400;
+        line-height: 1.4;
+        letter-spacing: 0.02em;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    .menu {
+        margin-left: 81px;
+    }
+
+    &-contacts {
+        margin-left: auto;
+        @include hover-underline-animation;
+
+        > a {
+            display: block !important;
+            margin-bottom: 9px;
+        }
+    }
+
+    &-socials {
+        display: flex;
+        margin: 30px 0;
+
+        a {
+            margin-right: 12px;
+            transition: transform $fast;
+
+            &:last-child {
+                margin-right: 0;
+            }
+
+            &:hover {
+                transform: translateY(-5px);
+            }
+        }
+    }
+}

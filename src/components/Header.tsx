@@ -1,4 +1,6 @@
 import React from 'react';
+import { Logo } from './Logo';
+import { Menu } from './Menu';
 
 export const Header: React.FC = () => {
 
@@ -13,20 +15,8 @@ export const Header: React.FC = () => {
     return (
         <header className={`header ${scrollY > 50?'active': ''}`}>
             <div className="container">
-                <div className="header-logo">
-                    <a href="#">
-                        <svg width="19" height="25" viewBox="0 0 19 25" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="m18.517 22.65-.358-1.672a28.298 28.298 0 0 0-4.02-9.625V8.64a3.659 3.659 0 0 0 1.465-2.928V4.248a.732.732 0 0 0-.733-.732h-.732V.732a.733.733 0 0 0-1.465 0v2.791A4.15 4.15 0 0 0 9.5 5.315a4.15 4.15 0 0 0-3.174-1.792V.733a.732.732 0 0 0-1.465 0v2.783H4.13a.732.732 0 0 0-.733.732v1.465c0 1.195.576 2.259 1.465 2.928v2.712a28.3 28.3 0 0 0-4.02 9.625l-.358 1.671a.732.732 0 0 0 .466.842A24.909 24.909 0 0 0 9.5 25a24.91 24.91 0 0 0 8.552-1.51.732.732 0 0 0 .465-.84ZM12.918 4.98h1.22v.733a2.2 2.2 0 0 1-2.197 2.197h-1.709v-.244a2.689 2.689 0 0 1 2.686-2.686Zm-8.057 0h1.221a2.689 2.689 0 0 1 2.686 2.686v.244h-1.71a2.2 2.2 0 0 1-2.197-2.197V4.98ZM7.06 9.375h4.882c.251 0 .496-.025.733-.074v1.539H6.326V9.3c.237.049.482.074.733.074ZM9.5 23.535c-2.542 0-5.044-.407-7.45-1.21l.224-1.04a26.84 26.84 0 0 1 3.715-8.98h7.022a26.84 26.84 0 0 1 3.715 8.98l.223 1.04a23.444 23.444 0 0 1-7.449 1.21Z" fill="#000"/></svg>
-                        <span>Womazing</span>
-                    </a>
-                </div>
-                <nav>
-                    <ul className="menu">
-                        <li><a className='active' href="#">Главная</a></li>
-                        <li><a href="#">Магазин</a></li>
-                        <li><a href="#">О бренде</a></li>
-                        <li><a href="#">Контакты</a></li>
-                    </ul>
-                </nav>
+                <Logo/>
+                <Menu/>
                 <div className="header-actions">
                     <div className="header-contacts">
                         <a href='tel:+380999051727' className="phone-icon">

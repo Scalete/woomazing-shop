@@ -5,8 +5,6 @@
     background-color: transparent;
     z-index: 3;
     transition: background $normal, box-shadow $normal;
-    
-    @include hover-underline-animation;
 
     &.active {
         background: $white;
@@ -18,52 +16,6 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-    }
-
-    &-logo {
-
-        a {
-            display: flex;
-            align-items: center;
-        }
-
-        span {
-            margin-left: 15px;
-            font-size: 16px;
-            line-height: 1.18;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
-        }
-    }
-
-    .menu {
-        display: flex;
-        align-items: center;
-
-        li {
-            margin-right: 45px;
-
-            &:last-child {
-                margin-right: 0;
-            }
-        }
-
-        a {
-            font-weight: 400;
-            font-size: 15px;
-            line-height: 1.4;
-            letter-spacing: 0.02em;
-            transition: color $fast;
-
-            &:hover {
-                color: $brand-color-green;
-            }
-
-            &.active {
-                font-weight: 700;
-                color: $brand-color-green;
-            }
-        }
     }
 
     &-actions {

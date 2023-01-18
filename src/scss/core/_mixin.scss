@@ -6,13 +6,13 @@
     }
 }
 
-@mixin hover-underline-animation {
-    .hover-underline-animation, .header-logo span {
+@mixin hover-underline-animation($color: $black) {
+    .hover-underline-animation, &.hover-underline-animation.logo span {
         display: inline-block;
         position: relative;
     }
       
-    .hover-underline-animation::after, .header-logo span::after {
+    .hover-underline-animation::after, &.hover-underline-animation.logo span::after {
         content: '';
         position: absolute;
         width: 100%;
@@ -20,12 +20,12 @@
         height: 1px;
         bottom: 0;
         left: 0;
-        background-color: $black;
+        background-color: $color;
         transform-origin: bottom right;
         transition: transform 0.25s ease-out;
     }
     
-    .hover-underline-animation:hover::after, .header-logo:hover span::after {
+    .hover-underline-animation:hover::after, &.hover-underline-animation.logo:hover span::after {
         transform: scaleX(1);
         transform-origin: bottom left;
     }

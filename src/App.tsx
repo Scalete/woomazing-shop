@@ -3,6 +3,8 @@ import { Promo } from './components/Promo';
 import { Header } from './components/Header';
 import { TitleProducts } from './components/TitleProducts';
 import { Functions } from './components/Functions';
+import { Team } from './components/Team';
+import { Footer } from './components/Footer';
 
 const App: React.FC = () => {
   return (
@@ -11,6 +13,8 @@ const App: React.FC = () => {
         <Promo/>
         <TitleProducts/>
         <Functions/>
+        <Team/>
+        <Footer/>
     </div>
   );
 }

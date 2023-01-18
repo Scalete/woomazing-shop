@@ -2,7 +2,7 @@ import React from 'react';
 
 export const Product = () => {
     return (
-        <ul>
+        <li>
             <a href="#" className="title-products-item">
                 <div className="title-products-img">
                     <div className="product-hover-overlay"></div>
@@ -12,6 +12,6 @@ export const Product = () => {
                 <h4>Футболка USA</h4>
                 <p><span>$229</span>$129</p>
             </a>
-        </ul>
+        </li>
     );
 };
