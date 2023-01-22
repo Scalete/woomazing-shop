@@ -1,15 +1,16 @@
 import React from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Pagination, Navigation, Autoplay } from 'swiper';
+import { Pagination, Navigation, Autoplay, Lazy } from 'swiper';
 
 import 'swiper/scss';
 import 'swiper/scss/pagination';
+import 'swiper/scss/lazy';
 
 const SwiperTeam = () => {
 
     return (
         <Swiper 
-            modules={[Pagination, Navigation, Autoplay]}
+            modules={[Pagination, Navigation, Autoplay, Lazy]}
             slidesPerView={1}
             navigation
             pagination={{ clickable: true }}
@@ -18,15 +19,19 @@ const SwiperTeam = () => {
                 delay: 10000,
                 disableOnInteraction: false,
             }}
+            lazy
         >
             <SwiperSlide>
-                <img src="/images/slider/team/1.jpg" alt="Team Slide" />
+                <img className="swiper-lazy" data-src="/images/slider/team/1.jpg" alt="Team Slide" />
+                <div className="swiper-lazy-preloader"></div>
             </SwiperSlide>
             <SwiperSlide>
-                <img src="/images/slider/team/2.jpg" alt="Team Slide" />
+                <img className="swiper-lazy" data-src="/images/slider/team/2.jpg" alt="Team Slide" />
+                <div className="swiper-lazy-preloader"></div>
             </SwiperSlide>
             <SwiperSlide>
-                <img src="/images/slider/team/3.jpg" alt="Team Slide" />
+                <img className="swiper-lazy" data-src="/images/slider/team/3.jpg" alt="Team Slide" />
+                <div className="swiper-lazy-preloader"></div>
             </SwiperSlide>
         </Swiper>
     )

@@ -1,0 +1,74 @@
+body {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 1;
+    color: $black;
+}
+
+.app {
+    display: flex;
+    flex-direction: column;
+}
+
+.container {
+    max-width: 1110px;
+    margin: 0 auto;
+}
+
+.second-title {
+    margin-bottom: 92px;
+    font-size: 40px;
+    line-height: 1.1;
+    letter-spacing: 0.02em;
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+    @include hover-underline-animation($brand-color-light-green);
+
+    li {
+        margin-right: 45px;
+
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+
+    a {
+        font-weight: 400;
+        font-size: 15px;
+        line-height: 1.4;
+        letter-spacing: 0.02em;
+        transition: color $fast;
+
+        &:hover {
+            color: $brand-color-green;
+        }
+
+        &.active {
+            font-weight: 700;
+            color: $brand-color-green;
+            pointer-events: none;
+        }
+    }
+}
+
+.logo {
+
+    @include hover-underline-animation;
+
+    a {
+        display: flex;
+        align-items: center;
+    }
+
+    span {
+        margin-left: 15px;
+        font-size: 16px;
+        line-height: 1.18;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+    }
+}

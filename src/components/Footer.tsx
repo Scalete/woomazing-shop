@@ -2,7 +2,7 @@ import React from 'react';
 import { Logo } from './Logo';
 import { Menu } from './Menu';
 
-export const Footer = () => {
+export const Footer: React.FC = () => {
     return (
         <footer className="footer">
             <div className="container">

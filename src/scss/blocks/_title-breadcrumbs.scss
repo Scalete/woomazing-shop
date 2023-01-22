@@ -1,0 +1,31 @@
+.title-breadcumbs {
+
+    margin: 269px 0 214px 0;
+
+    @include hover-underline-animation;
+
+    h2 {
+        margin-bottom: 26px;
+        font-size: 55px;
+        line-height: 1.1;
+        letter-spacing: 0.02em;
+    }
+
+    &-wrapper {
+        span {
+            margin: 0 13px;
+        }
+
+        span, a {
+            font-size: 17px;
+            line-height: 1.4;
+            letter-spacing: 0.02em;
+            color: #000000;
+        }
+    }
+
+    .inactive {
+        pointer-events: none;
+        color: $brand-color-light-gray;
+    }
+}

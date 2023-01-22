@@ -1,7 +1,7 @@
 import React from 'react';
 import SwiperTeam from './Swiper/SwiperTeam';
 
-export const Team = () => {
+export const Team: React.FC = () => {
     return (
         <section className="team">
             <div className="container">

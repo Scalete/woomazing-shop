@@ -1,0 +1,29 @@
+.filters {
+
+    margin-bottom: 92px;
+
+    &-wrapper {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        li {
+            padding: 19px 65px;
+            border: 1px solid $black;
+            transition: transform $normal, background-color $normal, color $normal;
+
+            &.active {
+                background-color: $black;
+                color: $white;
+                pointer-events: none;
+            }
+
+            &:hover {
+                transform: translateY(-10px);
+                background-color: $black;
+                color: $white;
+                cursor: pointer;
+            }
+        }
+    }
+}

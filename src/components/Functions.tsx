@@ -1,6 +1,6 @@
 import React from 'react';
 
-export const Functions = () => {
+export const Functions: React.FC = () => {
     return (
         <section className="functions container">
             <h2 className='second-title'>Что для нас важно</h2>

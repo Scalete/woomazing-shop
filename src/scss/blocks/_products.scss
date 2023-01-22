@@ -1,0 +1,17 @@
+.products {
+
+    .container > span {
+        display: block;
+        margin: 65px 0;
+        font-size: 17px;
+        line-height: 1.4;
+        letter-spacing: 0.02em;
+        color: $label-color;
+    }
+
+    &-wrapper {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 65px 30px;
+    }
+}

@@ -1,19 +1,26 @@
 import React from 'react';
-import { Promo } from './components/Promo';
 import { Header } from './components/Header';
-import { TitleProducts } from './components/TitleProducts';
-import { Functions } from './components/Functions';
-import { Team } from './components/Team';
 import { Footer } from './components/Footer';
+import { Route, Routes } from 'react-router-dom';
+import { Main } from './pages/Main';
+import { Shop } from './pages/Shop';
 
 const App: React.FC = () => {
   return (
-    <div className="App">
+    <div className="app">
         <Header/>
-        <Promo/>
-        <TitleProducts/>
-        <Functions/>
-        <Team/>
+            <main>
+                <Routes>
+                    <Route
+                    path="/"
+                    element={<Main />}
+                    />
+                    <Route
+                    path="/shop"
+                    element={<Shop />}
+                    />
+                </Routes>
+            </main>
         <Footer/>
     </div>
   );
