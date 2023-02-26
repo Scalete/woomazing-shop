@@ -1,5 +1,6 @@
 import { configureStore } from '@reduxjs/toolkit'
 import { useDispatch } from 'react-redux';
+import categorySlice from './slices/categoriesSlice';
 import productSlice from './slices/productsSlice';
 
 export type RootState = ReturnType<typeof store.getState>
@@ -9,6 +10,7 @@ export const useAppDispatch: () => AppDispatch = useDispatch;
 
 export const store = configureStore({
   reducer: {
-    products: productSlice
+    products: productSlice,
+    categories: categorySlice,
   },
 })

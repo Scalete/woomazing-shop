@@ -11,7 +11,6 @@ export const Products = () => {
 
     React.useEffect(() => {
         dispatch(fetchProducts());
-        
     }, [dispatch]);
 
     const renderProducts = () => {
