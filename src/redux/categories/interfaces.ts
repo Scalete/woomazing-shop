@@ -5,8 +5,8 @@ export interface CategoryItem {
     name: string
 }
 
-export interface IFilterSliceState {
+export interface ICategorySliceState {
     categoryData: CategoryItem[];
-    categoryId: number,
+    categoryId: number
     status: Status;
 }

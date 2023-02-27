@@ -1,9 +1,9 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import { fetchCategories } from '../redux/filter/asyncAcrions';
-import { setCategoryId, useCategories } from '../redux/filter/selectors';
-import { fetchFilterChange } from '../redux/product/asyncActions';
-import { ICategoryName } from '../redux/product/interfaces';
+import { fetchCategories } from '../redux/categories/asyncActions';
+import { setCategoryId, useCategories } from '../redux/categories/selectors';
+import { fetchProducts } from '../redux/product/asyncActions';
+import { setPagination } from '../redux/product/selectors';
 import { useAppDispatch } from '../redux/store';
 
 export const Filter = () => {
@@ -16,21 +16,23 @@ export const Filter = () => {
     }, [dispatch]);
 
     const renderCategories = () => {
-        return categoryData.map((item, index) => <li className={index + 1 === categoryId ? `active`: ''} key={item._id} onClick={() => onChangeCategory({name: item.name}, index + 1)}>{item.name}</li>);
+        return categoryData.map((item, index) => <li className={index + 1 === categoryId ? `active`: ''} key={item._id} onClick={() => onChangeCategory(item.name, index + 1)}>{item.name}</li>);
     }
 
-    const onChangeCategory = (category: ICategoryName, index: number) => {
-        dispatch(fetchFilterChange(category));
+    const onChangeCategory = (category: string, index: number) => {
+        const page = 1;
         dispatch(setCategoryId(index));
+        dispatch(setPagination(1));
+        dispatch(fetchProducts({category, page}));
         localStorage.setItem('category-id', `${index}`);
-        localStorage.setItem('category-name', `${category.name}`);
+        localStorage.setItem('category-name', `${category}`);
     }
     
     return (
         <div className='filters'>
             <div className="container">
                 <ul className="filters-wrapper">
-                    <li onClick={() => onChangeCategory({name: 'Все'}, 0)} key={-1} className={0 === categoryId ? `active`: ''}>Все</li>
+                    <li onClick={() => onChangeCategory('Все', 0)} key={-1} className={0 === categoryId ? `active`: ''}>Все</li>
                     {status === 'loading'?'': renderCategories()}
                 </ul>
             </div>

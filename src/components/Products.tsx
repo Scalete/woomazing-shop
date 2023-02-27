@@ -3,8 +3,8 @@ import { useAppDispatch } from '../redux/store';
 import { useSelector } from 'react-redux';
 import { Product } from './Product';
 import { useProducts } from '../redux/product/selectors';
-import { fetchFilterChange } from '../redux/product/asyncActions';
-import { setCategoryId } from '../redux/filter/selectors';
+import { fetchProducts } from '../redux/product/asyncActions';
+import { setCategoryId } from '../redux/categories/selectors';
 
 export const Products: React.FC = () => {
 
@@ -16,7 +16,7 @@ export const Products: React.FC = () => {
     }
 
     React.useEffect(() => {
-        dispatch(fetchFilterChange(isCategoryInLocalStorage() ? {name: localStorage.getItem('category-name')}: {name: 'Все'}));
+        dispatch(fetchProducts(isCategoryInLocalStorage() ? {category: localStorage.getItem('category-name'), page: 1}: {category: 'Все', page: 1}));
         dispatch(setCategoryId(isCategoryInLocalStorage() ? Number(localStorage.getItem('category-id')): 0));
     }, [dispatch]);
 

@@ -8,11 +8,20 @@ export interface ProductItem {
     discount: number;
 }
 
-export interface ICategoryName {
-    name: string | null
+export interface IFilterProducts {
+    category: string | null,
+    page: number | null
 }
 
 export interface IProductSliceState {
     productsData: ProductItem[];
+    page: number;
+    totalPages: number,
     status: Status;
+}
+
+export interface IFilteredProducts {
+    page: number;
+    totalPages: number;
+    paginatedItems: ProductItem[];
 }

@@ -1,21 +1,21 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { Status } from "../globalIntefaces";
-import { fetchCategories } from "./asyncAcrions";
-import { IFilterSliceState } from "./interfaces";
+import { fetchCategories } from "./asyncActions";
+import { ICategorySliceState } from "./interfaces";
 
-const initialState: IFilterSliceState = {
+const initialState: ICategorySliceState = {
     categoryData: [],
     categoryId: 0,
     status: Status.LOADING
 }
 
-export const filterSlice = createSlice({
-    name: "filters",
+export const categorySlice = createSlice({
+    name: "categories",
     initialState,
     reducers: {
         setCategoryId(state, action: PayloadAction<number>) {
             state.categoryId = action.payload;
-        },
+        }
     },
     extraReducers: (builder) => {
         builder.addCase(fetchCategories.pending, (state) => {
@@ -33,4 +33,4 @@ export const filterSlice = createSlice({
     },
 });
 
-export default filterSlice.reducer;
+export default categorySlice.reducer;
