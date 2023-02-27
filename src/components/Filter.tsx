@@ -1,8 +1,10 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
+import { fetchCategories } from '../redux/filter/asyncAcrions';
+import { setCategoryId, useCategories } from '../redux/filter/selectors';
+import { fetchFilterChange } from '../redux/product/asyncActions';
+import { ICategoryName } from '../redux/product/interfaces';
 import { useAppDispatch } from '../redux/store';
-import { fetchCategories, setCategoryId, useCategories } from '../redux/slices/categoriesSlice'
-import { fetchCategoryChange, ICategoryName } from '../redux/slices/productsSlice'
 
 export const Filter = () => {
 
@@ -18,8 +20,10 @@ export const Filter = () => {
     }
 
     const onChangeCategory = (category: ICategoryName, index: number) => {
-        dispatch(fetchCategoryChange(category));
+        dispatch(fetchFilterChange(category));
         dispatch(setCategoryId(index));
+        localStorage.setItem('category-id', `${index}`);
+        localStorage.setItem('category-name', `${category.name}`);
     }
     
     return (

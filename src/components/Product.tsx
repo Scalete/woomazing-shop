@@ -1,5 +1,5 @@
 import React from 'react';
-import { ProductItem } from '../redux/slices/productsSlice';
+import { ProductItem } from '../redux/product/interfaces';
 
 export const Product: React.FC<ProductItem> = ({imgUrl, title, price, discount}) => {
 

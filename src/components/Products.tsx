@@ -1,16 +1,23 @@
 import React from 'react';
-import { fetchProducts, useProducts } from '../redux/slices/productsSlice';
 import { useAppDispatch } from '../redux/store';
 import { useSelector } from 'react-redux';
 import { Product } from './Product';
+import { useProducts } from '../redux/product/selectors';
+import { fetchFilterChange } from '../redux/product/asyncActions';
+import { setCategoryId } from '../redux/filter/selectors';
 
-export const Products = () => {
+export const Products: React.FC = () => {
 
     const dispatch = useAppDispatch();
     const { productsData, status } = useSelector(useProducts);
 
+    function isCategoryInLocalStorage() {
+        return localStorage.getItem('category-name') && localStorage.getItem('category-id')? true: false;
+    }
+
     React.useEffect(() => {
-        dispatch(fetchProducts());
+        dispatch(fetchFilterChange(isCategoryInLocalStorage() ? {name: localStorage.getItem('category-name')}: {name: 'Все'}));
+        dispatch(setCategoryId(isCategoryInLocalStorage() ? Number(localStorage.getItem('category-id')): 0));
     }, [dispatch]);
 
     const renderProducts = () => {
