@@ -6,23 +6,24 @@ import { Main } from './pages/Main';
 import { Shop } from './pages/Shop';
 
 const App: React.FC = () => {
-  return (
-    <div className="app">
-        <Header/>
-            <main>
-                <Routes>
-                    <Route
-                    path="/"
-                    element={<Main />}
-                    />
-                    <Route
-                    path="/shop"
-                    element={<Shop />}
-                    />
-                </Routes>
-            </main>
-        <Footer/>
-    </div>
+
+    return (
+        <div className="app">
+            <Header/>
+                <main>
+                    <Routes>
+                        <Route
+                        path="/"
+                        element={<Main />}
+                        />
+                        <Route
+                        path="/shop"
+                        element={<Shop />}
+                        />
+                    </Routes>
+                </main>
+            <Footer/>
+        </div>
   );
 }
 

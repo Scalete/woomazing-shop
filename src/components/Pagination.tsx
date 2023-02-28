@@ -25,9 +25,11 @@ export const Pagination: React.FC = () => {
     return (
         <div className='pagination'>
             <div className="container">
+                <svg onClick={() => onChangePage(page - 1)} className={`arrow-btn left ${page <= 1 ? 'hide': ''}`} width="21" height="11" viewBox="0 0 21 11" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 5.5h20m0 0-5.135 5M20 5.5l-5.135-5" stroke="#000"/></svg>
                 <ul>
                     {status !== 'loading' ? renderPages(): ''}
                 </ul>
+                <svg onClick={() => onChangePage(Number(page) + 1)} className={`arrow-btn right ${page >= totalPages ? 'hide': ''}`} width="21" height="11" viewBox="0 0 21 11" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 5.5h20m0 0-5.135 5M20 5.5l-5.135-5" stroke="#000"/></svg>
             </div>
         </div>
     );

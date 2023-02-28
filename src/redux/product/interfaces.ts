@@ -25,3 +25,9 @@ export interface IFilteredProducts {
     totalPages: number;
     paginatedItems: ProductItem[];
 }
+
+export interface ISkeletonOptions {
+    width: number;
+    height: number;
+    elementsArr: React.ReactNode[];
+}
