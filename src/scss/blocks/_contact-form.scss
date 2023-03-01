@@ -1,0 +1,82 @@
+.contact-form {
+    position: absolute;
+    opacity: 0;
+    visibility: hidden;
+    top: 0;
+    left: 0;
+    z-index: 11;
+    height: 100%;
+    width: 100%;
+    background: rgba(110, 156, 159, 0.95);
+    transition: opacity $normal, visibility $normal;
+
+    &.active {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    form {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: flex;
+        flex-direction: column;
+        max-width: 491px;
+        padding: 70px;
+        background-color: $white;
+        text-align: center;
+
+        > :nth-child(n) {
+            margin-bottom: 35px;
+        }
+
+        > :last-child {
+            margin-bottom: 0;
+        }
+
+        h2 {
+            font-size: 25px;
+            line-height: 1.4;
+            letter-spacing: 0.02em;
+        }
+
+        input {
+            height: 40px;
+            padding: 0;
+            font-size: 17px;
+            line-height: 1.4;
+            letter-spacing: 0.02em;
+            border: none;
+            border-bottom: 1px solid $black;
+            transition: border $fast;
+
+            &::placeholder {
+                color: #868686;
+            }
+
+            &:focus {
+                outline: none;
+                border-bottom: 1px solid $brand-color-green;
+            }
+        }
+
+        .close-btn {
+            position: absolute;
+            right: 32px;
+            top: 32px;
+            transition: transform $fast;
+            cursor: pointer;
+
+            &:hover {
+                transform: scale(1.1);
+            }
+        }
+
+        .action.second {
+            width: 168px;
+            margin: 0 auto;
+            cursor: pointer;
+        }
+    }
+}
