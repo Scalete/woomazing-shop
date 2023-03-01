@@ -1,5 +1,4 @@
 import React from 'react';
-import { ContactForm } from '../components/ContactForm';
 import { Functions } from '../components/Functions';
 import { Promo } from '../components/Promo';
 import { Team } from '../components/Team';
@@ -12,7 +11,6 @@ export const Main = () => {
             <TitleProducts/>
             <Functions/>
             <Team/>
-            <ContactForm/>
         </>
     );
 };

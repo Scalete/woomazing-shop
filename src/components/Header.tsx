@@ -1,12 +1,11 @@
 import React from 'react';
+import { IDataFormProps } from '../redux/globalIntefaces';
 import { Logo } from './Logo';
 import { Menu } from './Menu';
-import { DataFormContext } from '../context/Contex';
 
-export const Header: React.FC = () => {
+export const Header: React.FC<IDataFormProps> = ({setActiveForm}) => {
 
     const [scrollY, setScrollY] = React.useState<number>(0);
-    const {setActiveForm} = React.useContext(DataFormContext);
 
     React.useEffect(() => {
         window.addEventListener('scroll', () => {

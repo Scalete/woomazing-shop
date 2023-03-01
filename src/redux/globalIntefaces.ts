@@ -3,3 +3,8 @@ export enum Status {
     SUCCES = 'succes',
     ERROR = 'error'
 }
+
+export interface IDataFormProps {
+    activeForm?: boolean;
+    setActiveForm?: React.Dispatch<React.SetStateAction<boolean>>;
+}

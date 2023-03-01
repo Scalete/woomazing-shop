@@ -1,6 +1,6 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { Status } from "../globalIntefaces";
-import { fetchProducts } from "./asyncActions";
+import { fetchNewCollectionsProducts, fetchProducts } from "./asyncActions";
 import { IProductSliceState } from "./interfaces";
 
 const initialState: IProductSliceState = {
@@ -30,6 +30,19 @@ export const productSlice = createSlice({
             state.page = action.payload.page;
         })
         builder.addCase(fetchProducts.rejected, (state) => {
+            state.status = Status.ERROR;
+            alert(Status.ERROR);
+            state.productsData = [];
+        })
+
+        builder.addCase(fetchNewCollectionsProducts.pending, (state) => {
+            state.status = Status.LOADING;
+        })
+        builder.addCase(fetchNewCollectionsProducts.fulfilled, (state, action) => {
+            state.status = Status.SUCCES;
+            state.productsData = action.payload;
+        })
+        builder.addCase(fetchNewCollectionsProducts.rejected, (state) => {
             state.status = Status.ERROR;
             alert(Status.ERROR);
             state.productsData = [];

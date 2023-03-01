@@ -4,7 +4,7 @@ import { Footer } from './components/Footer';
 import { Route, Routes } from 'react-router-dom';
 import { Main } from './pages/Main';
 import { Shop } from './pages/Shop';
-import { DataFormContext } from './context/Contex';
+import { ContactForm } from './components/ContactForm';
 
 const App: React.FC = () => {
 
@@ -20,25 +20,22 @@ const App: React.FC = () => {
 
     return (
         <div className="app">
-            <DataFormContext.Provider value={{activeForm, setActiveForm}} >
+            <Header setActiveForm={setActiveForm}/>
+            <main>
+                <Routes>
+                    <Route
+                    path="/"
+                    element={<Main />}
+                    />
+                    <Route
+                    path="/shop"
+                    element={<Shop />}
+                    />
+                </Routes>
+            </main>
+            <Footer/>
 
-                <Header/>
-                <main>
-                    <Routes>
-                        <Route
-                        path="/"
-                        element={<Main />}
-                        />
-                        <Route
-                        path="/shop"
-                        element={<Shop />}
-                        />
-                    </Routes>
-                </main>
-                <Footer/>
-
-            </DataFormContext.Provider>
-            
+            <ContactForm activeForm={activeForm} setActiveForm={setActiveForm}/>
         </div>
   );
 }

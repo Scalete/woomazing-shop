@@ -1,9 +1,9 @@
 import axios from 'axios';
 import React from 'react';
-import { DataFormContext } from '../context/Contex';
 import Cookies from 'js-cookie';
+import { IDataFormProps } from '../redux/globalIntefaces';
 
-export const ContactForm: React.FC = () => {    
+export const ContactForm: React.FC<IDataFormProps> = ({activeForm, setActiveForm}) => {    
 
     interface IFormData {
         name: string;
@@ -17,17 +17,16 @@ export const ContactForm: React.FC = () => {
         tel: ''
     });
 
-    const {activeForm, setActiveForm} = React.useContext(DataFormContext);
     const [formResponseData, setformResponseData] = React.useState<string>('');
+    const [onLoadingResponseData, setOnLoadingResponseData] = React.useState<boolean>(false);
 
-    const handleChange = (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         const { name, value } = event.target;
         setFormData((prevState) => ({ ...prevState, [name]: value }));
     };
 
     const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
-
         
         interface AxiosProp {
             message: string;
@@ -36,10 +35,12 @@ export const ContactForm: React.FC = () => {
         const cookieValue = Cookies.get('contact-form-date'); 
 
         if(!cookieValue) {
+            setOnLoadingResponseData(true);
             const { data } = await axios.post<AxiosProp>(`http://localhost:3001/form-data`, formData);
 
             Cookies.set('contact-form-date', 'true', { expires: 1 });
             setformResponseData(data.message);
+            setOnLoadingResponseData(false);
         } else {
             setformResponseData('Вы уже отправляли данные сегодня');
         }
@@ -70,7 +71,7 @@ export const ContactForm: React.FC = () => {
                             <input type="text" name="name" placeholder="Имя" autoComplete="off" value={formData.name} onChange={handleChange} required />
                             <input type="email" name="email" placeholder="E-mail" autoComplete="off" value={formData.email} onChange={handleChange}  required />
                             <input type="text" name="tel" placeholder="Телефон" autoComplete="off" value={formData.tel} onChange={handleChange} required />
-                            <button className='action main' type="submit">Заказать звонок</button>
+                            <button className='action main' type="submit">{onLoadingResponseData ? <img style={{maxHeight: "20px"}} src="/images/loadingGif.gif" alt="Loading"></img>: 'Заказать звонок'}</button>
                         </>
                     )
                 }
