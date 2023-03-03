@@ -5,6 +5,7 @@ import { Route, Routes } from 'react-router-dom';
 import { Main } from './pages/Main';
 import { Shop } from './pages/Shop';
 import { ContactForm } from './components/ContactForm';
+import { FullProduct } from './pages/FullProduct';
 
 const App: React.FC = () => {
 
@@ -30,6 +31,10 @@ const App: React.FC = () => {
                     <Route
                     path="/shop"
                     element={<Shop />}
+                    />
+                    <Route
+                    path="/product"
+                    element={<FullProduct />}
                     />
                 </Routes>
             </main>

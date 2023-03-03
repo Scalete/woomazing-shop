@@ -1,7 +1,7 @@
 import React from 'react';
 import { ProductItem } from '../redux/product/interfaces';
 
-export const Product: React.FC<ProductItem> = ({imgUrl, title, price, discount}) => {
+export const Product: React.FC<ProductItem> = ({_id, imgUrl, title, price, discount}) => {
 
     const calculateDiscount = () => {
         return discount !== 0? Math.floor(( price * discount ) / 100): price;
@@ -9,7 +9,7 @@ export const Product: React.FC<ProductItem> = ({imgUrl, title, price, discount})
 
     return (
         <li className='product'>
-            <a href="#" className="product-item">
+            <a href={`/product/${_id}`} className="product-item">
                 <div className="product-img">
                     <div className="product-hover-overlay"></div>
                     <img loading="lazy" src={imgUrl} alt="Product Item" />

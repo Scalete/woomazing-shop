@@ -17,7 +17,7 @@ export const TitleProducts: React.FC = () => {
     }, [dispatch]);
 
     const renderProducts = () => {
-        return productsData.map(item => <Product key={item._id} imgUrl={item.imgUrl} title={item.title} price={item.price} discount={item.discount} />);
+        return productsData.map(item => <Product key={item._id} _id={item._id} imgUrl={item.imgUrl} title={item.title} price={item.price} discount={item.discount} />);
     }
 
     return (

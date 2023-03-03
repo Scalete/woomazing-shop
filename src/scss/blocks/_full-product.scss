@@ -1,0 +1,165 @@
+.full-product {
+    display: flex;
+    align-items: center;
+
+    &-wrapper {
+        padding-left: 74px;
+    }
+    
+    img {
+        width: 536px;
+        height: 729px;
+    }
+
+    ul {
+        margin-bottom: 59px;
+    }
+
+    .title {
+        margin-bottom: 34px;
+        font-size: 20px;
+        line-height: 1.4;
+        letter-spacing: 0.02em;
+    }
+
+    .price-wrapper {
+        margin-bottom: 59px;
+        line-height: 1.1;
+        letter-spacing: 0.02em;
+
+        span.price {
+            margin-right: 29px;
+            font-size: 40px;
+            color: $brand-color-dark-gray;
+        }
+
+        span.discount {
+            font-size: 30px;
+            color: $brand-color-discount;
+            text-decoration: line-through;
+        }
+    }
+
+    .size-wrapper, .color-wrapper {
+
+        input[type="radio"] {
+            appearance: none;
+            width: 41px;
+            height: 41px;
+            margin: 0;
+            outline: none;
+            cursor: pointer;
+        }
+
+        ul {
+            display: flex;
+
+            li {
+                position: relative;
+                margin-right: 14px;
+
+                &:last-child {
+                    margin-right: 0;
+                }
+            }
+        }
+    }
+
+    .size-wrapper {
+        
+        input[type="radio"] {
+            border: 1px solid $black;
+            transition: background-color $fast;
+
+            &:hover {
+                background-color: $black;
+
+                + label {
+                    color: $white;
+                }
+            }
+        }
+
+        input[type="radio"]:checked {
+            background-color: $black;
+            pointer-events: none;
+
+            + label {
+                color: $white;
+            }
+        }
+
+        label {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 17px;
+            line-height: 1.4;
+            letter-spacing: 0.02em;
+            pointer-events: none;
+            transition: color $fast;
+        }
+    }
+
+    .color-wrapper {
+        input[type="radio"] {
+            border-radius: 50%;
+            transition: border $fast;
+
+            &:hover {
+                border: 1px solid $black;
+            }
+        }
+
+        input[type="radio"]:checked {
+            border: 1px solid $black;
+            pointer-events: none;
+        }
+
+        .brown {
+            background-color: $color-product-brown;
+        }
+
+        .gray {
+            background-color: $color-product-gray;
+        }
+
+        .red {
+            background-color: $color-product-red;
+        }
+
+        .orange {
+            background-color: $color-product-orange;
+        }
+    }
+
+    .action-wrapper {
+
+        input {
+            width: 64px;
+            height: 64px;
+            padding: 0 5px;
+            font-weight: 400;
+            font-size: 20px;
+            letter-spacing: 0.02em;
+            text-align: center;
+            border: 1px solid $input-gray-color;
+            transition: border $fast;
+
+            &::-webkit-inner-spin-button {
+                -webkit-appearance: none;
+                margin: 0
+            }
+
+            &:focus {
+                outline: none;
+                border: 2px solid $brand-color-green;
+            }
+        }
+
+        .action {
+            margin-left: 11px;
+        }
+    }
+}
