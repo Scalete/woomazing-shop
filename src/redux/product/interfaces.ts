@@ -31,3 +31,7 @@ export interface ISkeletonOptions {
     height: number;
     elementsArr: React.ReactNode[];
 }
+
+export interface IRelativeProducts {
+    _id: string;
+}

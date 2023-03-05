@@ -9,7 +9,7 @@ export const Product: React.FC<ProductItem> = ({_id, imgUrl, title, price, disco
 
     return (
         <li className='product'>
-            <a href={`/product/${_id}`} className="product-item">
+            <a href={`/product?_id=${_id}`} className="product-item">
                 <div className="product-img">
                     <div className="product-hover-overlay"></div>
                     <img loading="lazy" src={imgUrl} alt="Product Item" />

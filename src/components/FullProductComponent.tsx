@@ -1,15 +1,16 @@
 import React from 'react';
+import { ProductItem } from '../redux/product/interfaces';
 
-export const FullProductComponent: React.FC = () => {
+export const FullProductComponent: React.FC<ProductItem> = ({_id, imgUrl, title, price, discount}) => {
 
     return (
         <div className="container">
             <div className='full-product'>
-                <img src="/images/products/1.jpg" alt="Product" />
+                <img src={imgUrl} alt="Product" />
                 <div className="full-product-wrapper">
                     <div className="price-wrapper">
-                        <span className="price">$311</span>
-                        <span className="discount">$450</span>
+                        <span className="price">${price}</span>
+                        <span className="discount">{discount ? '$' + discount: ''}</span>
                     </div>
                     <div className="size-wrapper">
                         <div className="title">Выберите размер</div>
@@ -54,7 +55,7 @@ export const FullProductComponent: React.FC = () => {
                         </ul>
                     </div>
                     <div className="action-wrapper">
-                        <input type="number" min="1" max="99"/>
+                        <input type="number" min="1" max="99" value={1}/>
                         <button className="action main">Добавить в корзину</button>
                     </div>
                 </div>

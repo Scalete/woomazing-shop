@@ -34,7 +34,7 @@ export const Filter = () => {
             <div className="container">
                 <ul className="filters-wrapper">
                     <li onClick={() => onChangeCategory('Все', 0)} key={-1} className={0 === categoryId ? `active`: ''}>Все</li>
-                    {status === 'loading'? new Array(4).fill(<Skeleton width={skeletonCategoryOptions.width} height={skeletonCategoryOptions.height} elementsArr={skeletonCategoryOptions.elementsArr}/>): renderCategories()}
+                    {status === 'loading'? new Array(4).fill('').map((__, i) => <Skeleton key={i} width={skeletonCategoryOptions.width} height={skeletonCategoryOptions.height} elementsArr={skeletonCategoryOptions.elementsArr}/>): renderCategories()}
                 </ul>
             </div>
         </div>

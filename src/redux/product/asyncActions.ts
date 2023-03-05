@@ -1,6 +1,6 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
-import { IFilteredProducts, IFilterProducts, ProductItem } from "./interfaces";
+import { IFilteredProducts, IFilterProducts, IRelativeProducts, ProductItem } from "./interfaces";
 
 export const fetchProducts = createAsyncThunk<IFilteredProducts, IFilterProducts>(
     'product/fetchProducts',
@@ -28,6 +28,21 @@ export const fetchNewCollectionsProducts = createAsyncThunk<ProductItem[]>(
   
         const { data } = await axios.get<AxiosProp>(`http://localhost:3001/products/new-collection`);
 
+        return data.foundProducts;
+    }
+);
+
+export const fetchRelativeProducts = createAsyncThunk<ProductItem[], IRelativeProducts>(
+    'product/fetchRelativeProducts',
+    async ({_id}) => {
+
+        interface AxiosProp {
+            message: string;
+            foundProducts: ProductItem[];
+        }
+  
+        const { data } = await axios.get<AxiosProp>(`http://localhost:3001/products/relative?_id=${_id}`);
+        
         return data.foundProducts;
     }
 );
