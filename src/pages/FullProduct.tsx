@@ -23,7 +23,7 @@ export const FullProduct: React.FC = () => {
 
     return (
         <>
-            <TitleBreadcrumbs title='Свитшот Sweet Shot' breadcrumbs={[{link: '/', name: 'Главная'}, {link: '/shop', name: 'Магазин'}, {link: '/', name: product.title}]}/>
+            <TitleBreadcrumbs title={product.title} breadcrumbs={[{link: '/', name: 'Главная'}, {link: '/shop', name: 'Магазин'}, {link: '/', name: product.title}]}/>
             <FullProductComponent imgUrl={product.imgUrl} title={product.title} price={product.price} discount={product.discount} />
             <TitleProducts title='Связанные товары' asyncFunc={() => fetchRelativeProducts({_id: _id})}/>
         </>

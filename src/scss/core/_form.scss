@@ -1,0 +1,39 @@
+form {
+    display: flex;
+    flex-direction: column;
+    max-width: 491px;
+    background-color: $white;
+
+    > :nth-child(n) {
+        margin-bottom: 35px;
+    }
+
+    > :last-child {
+        margin-bottom: 0;
+    }
+
+    input, textarea {
+        height: 40px;
+        padding: 0;
+        font-size: 17px;
+        line-height: 1.4;
+        letter-spacing: 0.02em;
+        border: none;
+        border-bottom: 1px solid $black;
+        transition: border $fast;
+        resize: none;
+
+        &::placeholder {
+            color: #868686;
+        }
+
+        &:focus {
+            outline: none;
+            border-bottom: 1px solid $brand-color-green;
+        }
+    }
+
+    textarea {
+        height: 134px;
+    }
+}

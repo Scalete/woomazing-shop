@@ -6,6 +6,8 @@ import { Main } from './pages/Main';
 import { Shop } from './pages/Shop';
 import { ContactForm } from './components/ContactForm';
 import { FullProduct } from './pages/FullProduct';
+import { About } from './pages/About';
+import { Contact } from './pages/Contact';
 
 const App: React.FC = () => {
 
@@ -35,6 +37,14 @@ const App: React.FC = () => {
                     <Route
                     path="/product"
                     element={<FullProduct />}
+                    />
+                    <Route
+                    path="/about"
+                    element={<About />}
+                    />
+                    <Route
+                    path="/contacts"
+                    element={<Contact />}
                     />
                 </Routes>
             </main>

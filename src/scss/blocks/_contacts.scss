@@ -1,0 +1,56 @@
+.contacts {
+
+    &-info {
+        display: flex;
+        margin: 130px 0;
+
+        li {
+            display: flex;
+            flex-direction: column;
+            margin-right: 111px;
+
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+
+        h5, span {
+            font-size: 17px;
+            line-height: 1.4;
+            letter-spacing: 0.02em;
+        }
+
+        h5 {
+            margin-bottom: 19px;
+        }
+
+        span {
+            font-size: 20px;
+        }
+    }
+
+    form {
+        h5 {
+            font-size: 25px;
+            line-height: 1.4;
+            letter-spacing: 0.02em;
+        }
+    }
+
+    .response {
+        height: 0px;
+        padding: 0px;
+        margin-top: 23px;
+        font-size: 17px;
+        line-height: 1.4;
+        text-align: center;
+        background-color: $promo-color-overlay;
+        transition: height $fast, padding $fast;
+
+        &.active {
+            height: auto;
+            padding: 30px 76px;
+        }
+    }
+
+}

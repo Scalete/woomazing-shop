@@ -1,0 +1,47 @@
+.about {
+
+    h3 {
+        margin-bottom: 46px;
+        font-size: 25px;
+        line-height: 1.4;
+        letter-spacing: 0.02em;
+    }
+
+    p {
+        font-size: 17px;
+        line-height: 1.4;
+        letter-spacing: 0.02em;
+        margin-bottom: 24px;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    &-wrapper {
+        display: flex;
+        align-items: center;
+        margin-bottom: 130px;
+
+        .about-text {
+            max-width: 542px;
+
+            &.margin {
+                margin-right: 123px;
+            }
+        }
+
+        &:first-child {
+
+            .about-text {
+                margin-left: 94px;
+            }
+        }
+    }
+
+    .action {
+        display: block;
+        max-width: 260px;
+        margin: 0 auto;
+    }
+}

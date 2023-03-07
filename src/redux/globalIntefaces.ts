@@ -1,5 +1,12 @@
 import { ReactNode } from "react";
 
+export interface IFormData {
+    name: string;
+    email: string;
+    tel: string;
+    message?: string;
+}
+
 export enum Status {
     LOADING = 'loading',
     SUCCES = 'succes',

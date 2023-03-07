@@ -16,7 +16,7 @@ export const Product: React.FC<ProductItem> = ({_id, imgUrl, title, price, disco
                     <svg width="32" height="24" viewBox="0 0 32 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 12h31m0 0L20.186 1M31 12 20.186 23" stroke="#fff"/></svg>
                 </div>
                 <h4>{title}</h4>
-                <p><span style={discount? {}: {display: 'none'}}>{price}</span>{calculateDiscount()}</p>
+                <p><span style={discount? {}: {display: 'none'}}>{'$' + price}</span>{'$' + calculateDiscount()}</p>
             </a>
         </li>
     );

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import SwiperTeam from './Swiper/SwiperTeam';
 
 export const Team: React.FC = () => {
@@ -14,7 +15,7 @@ export const Team: React.FC = () => {
                         <h3>Для каждой</h3>
                         <p>Каждая девушка уникальна. Однако, мы схожи в миллионе мелочей.</p>
                         <p>Womazing ищет эти мелочи и создает прекрасные вещи, которые выгодно подчеркивают достоинства каждой девушки.</p>
-                        <a className='hover-underline-animation' href="#">Подробнее о бренде</a>
+                        <Link to='/about' className='hover-underline-animation'>Подробнее о бренде</Link>
                     </div>
                 </div>
             </div>
