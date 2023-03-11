@@ -19,7 +19,7 @@ export const TitleProducts: React.FC<ITitleProductsProps> = ({title, asyncFunc, 
         return productsData.map(item => <Product key={item._id} _id={item._id} imgUrl={item.imgUrl} title={item.title} price={item.price} discount={item.discount} />);
     }
 
-    return (
+    return ( productsData.length ? 
         <section id="title-products" className="title-products" style={!button ? {marginBottom: '0px', marginTop: '100px'}: {}}>
             <div className="container">
                 <h2 className='second-title'>{title}</h2>
@@ -28,6 +28,6 @@ export const TitleProducts: React.FC<ITitleProductsProps> = ({title, asyncFunc, 
                 </ul>
                 {button}
             </div>
-        </section>
+        </section> : <div></div>
     );
 };

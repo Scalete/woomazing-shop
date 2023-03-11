@@ -28,15 +28,14 @@
         letter-spacing: 0.02em;
 
         span.price {
-            margin-right: 29px;
             font-size: 40px;
             color: $brand-color-dark-gray;
         }
 
         span.discount {
+            margin-right: 29px;
             font-size: 30px;
             color: $brand-color-discount;
-            text-decoration: line-through;
         }
     }
 

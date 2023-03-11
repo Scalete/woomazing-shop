@@ -31,7 +31,7 @@ export const ContactComponent: React.FC = () => {
                         <span>г. Харьков, проспект Гагарина, 25</span>
                     </li>
                 </ul>
-                <form onSubmit={(e) => handleSubmit(e, setOnLoadingResponseData, setformResponseData, formData)}>
+                <form className='main' onSubmit={(e) => handleSubmit(e, setOnLoadingResponseData, setformResponseData, formData)}>
                     <h3>Напишите нам</h3>
                     <input type="text" name="name" placeholder="Имя" autoComplete="off" onChange={(e) => handleChange(e, setFormData)} required />
                     <input type="email" name="email" placeholder="E-mail" autoComplete="off" onChange={(e) => handleChange(e, setFormData)}  required />

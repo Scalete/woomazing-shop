@@ -8,6 +8,11 @@ import { ContactForm } from './components/ContactForm';
 import { FullProduct } from './pages/FullProduct';
 import { About } from './pages/About';
 import { Contact } from './pages/Contact';
+import { Cart } from './pages/Cart';
+import { ScrollToTop } from './utils/helperFunctions';
+import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer } from 'react-toastify';
+import { Checkout } from './pages/Checkout';
 
 const App: React.FC = () => {
 
@@ -24,6 +29,7 @@ const App: React.FC = () => {
     return (
         <div className="app">
             <Header setActiveForm={setActiveForm}/>
+            <ScrollToTop />
             <main>
                 <Routes>
                     <Route
@@ -46,9 +52,18 @@ const App: React.FC = () => {
                     path="/contacts"
                     element={<Contact />}
                     />
+                    <Route
+                    path="/cart"
+                    element={<Cart />}
+                    />
+                    <Route
+                    path="/checkout"
+                    element={<Checkout />}
+                    />
                 </Routes>
             </main>
             <Footer/>
+            <ToastContainer position="bottom-right" autoClose={3000}/>
 
             <ContactForm activeForm={activeForm} setActiveForm={setActiveForm}/>
         </div>

@@ -29,7 +29,7 @@ export const ContactForm: React.FC<IDataFormProps> = ({activeForm, setActiveForm
 
     return (
         <div className={`contact-form ${activeForm ? 'active': ''}`}>
-            <form style={formResponseData? {width: '600px', maxWidth: 'initial'}: undefined} onSubmit={(e) => handleSubmit(e, setOnLoadingResponseData, setformResponseData, formData)}>
+            <form className='main' style={formResponseData? {width: '600px', maxWidth: 'initial'}: undefined} onSubmit={(e) => handleSubmit(e, setOnLoadingResponseData, setformResponseData, formData)}>
                 {formResponseData ? '': <svg onClick={onClose} className='close-btn' width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="m1 1 14.5 14.5m0-14.5L1 15.5" stroke="#000"/></svg>}
                 <h2>{formResponseData ? formResponseData: 'Заказать обратный звонок'}</h2>
                 {

@@ -76,3 +76,21 @@ body {
         text-transform: uppercase;
     }
 }
+
+span {
+    &.brown {
+        color: $color-product-brown;
+    }
+
+    &.gray {
+        color: $color-product-gray;
+    }
+
+    &.red {
+        color: $color-product-red;
+    }
+
+    &.orange {
+        color: $color-product-orange;
+    }
+}

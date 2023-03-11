@@ -28,6 +28,17 @@
         }
     }
 
+    &.red {
+        color: $color-product-red;
+        background-color: $white;
+        border: 1px solid $color-product-red;
+
+        &:hover {
+            color: $white;
+            background-color: $color-product-red;
+        }
+    }
+
     &.arrow {
         padding: 16px 27px;
         background-color: rgba(110, 156, 159, 0.1);

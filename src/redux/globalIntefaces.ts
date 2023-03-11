@@ -10,7 +10,9 @@ export interface IFormData {
 export enum Status {
     LOADING = 'loading',
     SUCCES = 'succes',
-    ERROR = 'error'
+    ERROR = 'error',
+    ALL_CART_DELETE = 'all_cart_delete',
+    ALL_CART_ERROR_DELETE = 'all_cart_error_delete',
 }
 
 export interface IDataFormProps {

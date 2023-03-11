@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 interface ITitleBreadcrumbsProps {
     title: string;
@@ -24,9 +24,12 @@ const renderBreadcrumbs = (breadcrumbs: ITitleBreadcrumbsProps['breadcrumbs']) =
 }
 
 export const TitleBreadcrumbs: React.FC<ITitleBreadcrumbsProps> = ({title, breadcrumbs}) => {
+
+    const location = useLocation();
+    
     return (
         <div className="container">
-            <div className='title-breadcumbs'>
+            <div className='title-breadcumbs' style={location.pathname === '/product' ? {margin: '189px 0 102px 0'}: {} }>
                 <h2>{title}</h2>
                 <div className="title-breadcumbs-wrapper">
                     {renderBreadcrumbs(breadcrumbs)}
