@@ -2,7 +2,7 @@
     box-sizing: border-box;
 }
 
-html {
+html, body, .app, #root {
     height: 100%;
     scroll-behavior: smooth;
 }

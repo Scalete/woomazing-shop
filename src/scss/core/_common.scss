@@ -10,6 +10,14 @@ body {
     }
 }
 
+main {
+    flex: 1;
+}
+
+footer {
+    flex-shrink: 0;
+}
+
 .app {
     display: flex;
     flex-direction: column;
@@ -86,6 +94,24 @@ body {
         font-size: 60px;
         text-align: center;
         color: $brand-color-light-gray;            
+    }
+}
+
+.not-found-page {
+    margin-top: 200px;
+    letter-spacing: 0.02em;
+    text-align: center;
+
+    h1 {
+        margin-bottom: 20px;
+        font-size: 78px;
+        opacity: 0.5;
+    }
+
+    p {
+        margin-bottom: 80px;
+        font-size: 38px;
+        opacity: 0.5;
     }
 }
 

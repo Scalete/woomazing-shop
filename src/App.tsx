@@ -13,6 +13,7 @@ import { ScrollToTop } from './utils/helperFunctions';
 import 'react-toastify/dist/ReactToastify.css';
 import { ToastContainer } from 'react-toastify';
 import { Checkout } from './pages/Checkout';
+import NotFoundPage from './pages/NotFoundPage';
 
 const App: React.FC = () => {
 
@@ -60,6 +61,7 @@ const App: React.FC = () => {
                     path="/checkout"
                     element={<Checkout />}
                     />
+                    <Route path="*" element={<NotFoundPage />} />
                 </Routes>
             </main>
             <Footer/>
