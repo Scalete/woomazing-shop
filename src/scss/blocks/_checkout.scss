@@ -1,3 +1,146 @@
 .checkout {
-    
+    form {
+        max-width: initial;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    h3 {
+        margin-bottom: 47px;
+        font-size: 25px;
+        line-height: 1.4;
+        letter-spacing: 0.02em;
+    }
+
+    input {
+        margin-bottom: 35px;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    &-details {
+        min-width: 350px;
+    }
+
+    &-form {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 81px;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    &-order {
+        max-width: 284px;
+        justify-self: flex-end;
+    }
+
+    &-info {
+        margin-bottom: 145px;
+
+        h3 {
+            padding: 0 14px;
+        }
+
+        li {
+            display: flex;
+            justify-content: space-between;
+            padding: 0 14px;
+            margin-bottom: 30px;
+            font-size: 17px;
+            line-height: 1.4;
+            letter-spacing: 0.02em;
+
+            &:first-child, &:last-child {
+                font-size: 20px;
+            }
+
+            &:last-child {
+                padding: 15px 24px;
+                margin-bottom: 0;
+                background-color: $promo-color-overlay;
+            }
+        }
+    }
+
+    &-actions {
+        padding: 0 14px;
+    }
+
+    &-success {
+        display: flex;
+        line-height: 1.4;
+        letter-spacing: 0.02em;
+
+        h3 {
+            margin-bottom: 0;
+        }
+
+        p {
+            font-size: 17px;
+        }
+
+        .title-wrapper {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            margin-left: 44px;
+        }
+
+        .action {
+            height: 68px;
+            margin-left: auto;
+        }
+    }
+
+    .checkbox-container {
+        display: block;
+        position: relative;
+        padding-left: 35px;
+        margin-bottom: 48px;
+        cursor: pointer;
+        font-size: 17px;
+        letter-spacing: 0.02em;
+        user-select: none;
+    }
+
+    .checkbox-container input {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+    }
+
+    .checkmark {
+        position: absolute;
+        top: -4px;
+        left: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 22px;
+        width: 22px;
+    }
+
+    .checkbox-container input:checked ~ .checkmark {
+        border: 1px solid $black;
+        background-color: $white;
+    }
+
+    .checkmark:after {
+        content: "";
+        position: absolute;
+        display: none;
+        width: 10px;
+        height: 10px;
+        background-color: $black;
+    }
+
+    .checkbox-container input:checked ~ .checkmark:after {
+        display: block;
+    }
 }

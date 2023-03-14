@@ -25,3 +25,17 @@ export interface ITitleProductsProps {
     asyncFunc: any;
     button?: ReactNode;
 }
+
+export interface IUserInfo {
+    name: string;
+    email: string;
+    tel: string;
+}
+
+export interface IUserAddress {
+    country: string;
+    city: string;
+    street: string;
+    house: string;
+    apartment: string;
+}

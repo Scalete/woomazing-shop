@@ -65,8 +65,8 @@ export const cartSlice = createSlice({
             }
         },
 
-        clearCart(state) {
-            if(window.confirm('Вы точно хотите очистить корзину ?')) {
+        clearCart(state, action: PayloadAction<boolean>) {
+            if(action.payload) {
                 state.status = Status.ALL_CART_DELETE;
                 state.cartProducts = [];
             } else {

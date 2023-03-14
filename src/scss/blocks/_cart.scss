@@ -79,18 +79,6 @@
         align-items: center;
     }
 
-    &-empty {
-
-        margin-bottom: 100px;
-        
-        h1 {
-            font-weight: 700;
-            font-size: 60px;
-            text-align: center;
-            color: $brand-color-light-gray;            
-        }
-    }
-
     .count-change {
         font-size: 40px;
         color: $brand-color-green;

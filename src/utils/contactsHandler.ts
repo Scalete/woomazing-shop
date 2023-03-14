@@ -1,10 +1,11 @@
 import axios from "axios";
 import Cookies from "js-cookie";
 import { IFormData } from "../redux/globalIntefaces";
+import { IFormDataCheckout } from "../redux/order/interface";
 
-export const handleChange = (event: React.ChangeEvent<HTMLInputElement> | React.ChangeEvent<HTMLTextAreaElement>, setFormData: React.Dispatch<React.SetStateAction<IFormData>>) => {
+export const handleChange = (event: React.ChangeEvent<HTMLInputElement> | React.ChangeEvent<HTMLTextAreaElement>, setFormData: any) => {
     const { name, value } = event.target;
-    setFormData((prevState) => ({ ...prevState, [name]: value }));
+    setFormData((prevState: IFormData | IFormDataCheckout) => ({ ...prevState, [name]: value }));
 };
 
 export const handleSubmit = async (event: React.FormEvent<HTMLFormElement>, setOnLoadingResponseData: React.Dispatch<React.SetStateAction<boolean>>, setformResponseData: React.Dispatch<React.SetStateAction<string>>, formData: IFormData) => {

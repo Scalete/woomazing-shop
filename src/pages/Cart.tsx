@@ -2,13 +2,13 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { toast } from 'react-toastify';
-import { CartItem } from '../components/Cart/CartItem';
-import { EmptyCart } from '../components/Cart/EmptyCart';
+import { CartItem } from '../components/CartItem';
+import { Empty } from './Empty';
 import { TitleBreadcrumbs } from '../components/TitleBreadcrumbs';
 import { clearCart, deleteCartItem, resetStatus, useCartProducts } from '../redux/cart/selectors';
 import { Status } from '../redux/globalIntefaces';
 import { useAppDispatch } from '../redux/store';
-import { calculateDiscount } from '../utils/helperFunctions';
+import { calcTotalSum, calculateDiscount } from '../utils/helperFunctions';
 
 export const Cart: React.FC = () => {
 
@@ -18,12 +18,6 @@ export const Cart: React.FC = () => {
 
     const renderProducts = () => {
         return cartProducts.map((item, i) => <CartItem key={i} _cartId={i} _id={item.product._id as string} imgUrl={item.product.imgUrl} title={item.product.title} discount={item.product.discount} price={item.product.price} count={item.count} extraOptions={item.extraOptions} onDeleteItem={onDeleteItem}/>);
-    }
-
-    const calcTotalSum = () => {
-        return cartProducts
-        .map(item => item.product.discount ? calculateDiscount(item.product.price, item.product.discount) * item.count: item.product.price * item.count)
-        .reduce((sum, item) => sum + item);
     }
 
     React.useEffect(() => {
@@ -47,7 +41,9 @@ export const Cart: React.FC = () => {
     }
 
     const onClearCart = () => {
-        dispatch(clearCart());
+        const isClearCart = window.confirm('Вы точно хотите очистить корзину ?');
+        console.log(isClearCart);
+        dispatch(clearCart(isClearCart));
     }
 
     return (
@@ -57,7 +53,7 @@ export const Cart: React.FC = () => {
             <section className="cart">
                 <div className="container">
                     {
-                        !cartProducts.length ? <EmptyCart/> : (
+                        !cartProducts.length ? <Empty text='Ваша корзина пуста.'/> : (
                             <>
                                 <ul className="cart-header">
                                     <li>Товар</li>
@@ -69,9 +65,9 @@ export const Cart: React.FC = () => {
                                 <div className="actions">
                                     <div className="action red" onClick={onClearCart}>Очистить корзину</div>
                                     <div>
-                                        <span>Подытог: ${calcTotalSum()}</span>
+                                        <span>Подытог: ${calcTotalSum(cartProducts)}</span>
                                         <div className="actions-wrapper">
-                                            <div className="total"><span>Итого:</span><span>${calcTotalSum()}</span></div>
+                                            <div className="total"><span>Итого:</span><span>${calcTotalSum(cartProducts)}</span></div>
                                             <Link to={'/checkout'} className="action main">Оформить заказ</Link>
                                         </div>
                                     </div>

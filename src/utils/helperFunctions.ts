@@ -39,3 +39,9 @@ export const renderCartColors = (color: string) => {
         return '';
     }
 }
+
+export const calcTotalSum = (cartProducts: ICartItem[]) => {
+    return cartProducts
+    .map(item => item.product.discount ? calculateDiscount(item.product.price, item.product.discount) * item.count: item.product.price * item.count)
+    .reduce((sum, item) => sum + item);
+}

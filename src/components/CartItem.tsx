@@ -1,10 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { toast } from 'react-toastify';
-import { CartItemProps } from '../../redux/cart/interfaces';
-import { addCartItemCount, minusCartItemCount } from '../../redux/cart/selectors';
-import { useAppDispatch } from '../../redux/store';
-import { calculateDiscount, renderCartColors } from '../../utils/helperFunctions';
+import { CartItemProps } from '../redux/cart/interfaces';
+import { addCartItemCount, minusCartItemCount } from '../redux/cart/selectors';
+import { useAppDispatch } from '../redux/store';
+import { calculateDiscount, renderCartColors } from '../utils/helperFunctions';
 
 export const CartItem: React.FC<CartItemProps> = ({_cartId, _id, imgUrl, title, discount, price, count, extraOptions, onDeleteItem}) => {
 
