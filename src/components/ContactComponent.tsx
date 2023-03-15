@@ -1,14 +1,26 @@
 import React from 'react';
 import { IFormData } from '../redux/globalIntefaces';
-import { handleChange, handleSubmit } from '../utils/contactsHandler';
+import { handleSubmitForm } from '../utils/contactsHandler';
+import * as yup from "yup";
+import { yupResolver } from '@hookform/resolvers/yup';
+import { useForm } from 'react-hook-form';
 
 export const ContactComponent: React.FC = () => {
 
-    const [formData, setFormData] = React.useState<IFormData>({
-        name: '',
-        email: '',
-        tel: '',
-        message: ''
+    const schema = yup.object().shape({
+        name: yup.string().min(2, "Имя должно содержать минимум 2 буквы").required("Введите имя"),
+        email: yup.string().email("Введите корректный e-mail").max(30, "Максимальное количество символов: 30").required("Введите e-mail"),
+        tel: yup.string().matches(/^\+?\d{1,4}[-.\s]?\d{1,20}$/, "Введите корректный телефон").required("Введите телефон"),
+        message: yup.string().max(100, "Максимальное количество символов: 100"),
+    });
+
+    const { register, handleSubmit, formState: { errors } } = useForm<IFormData>({
+        defaultValues: {
+            name: '',
+            email: '',
+            tel: '',
+        },
+        resolver: yupResolver(schema)
     });
 
     const [formResponseData, setformResponseData] = React.useState<string>('');
@@ -31,12 +43,21 @@ export const ContactComponent: React.FC = () => {
                         <span>г. Харьков, проспект Гагарина, 25</span>
                     </li>
                 </ul>
-                <form className='main' onSubmit={(e) => handleSubmit(e, setOnLoadingResponseData, setformResponseData, formData)}>
+                <form className='main' onSubmit={handleSubmit(handleSubmitForm(setOnLoadingResponseData, setformResponseData))}>
                     <h3>Напишите нам</h3>
-                    <input type="text" name="name" placeholder="Имя" autoComplete="off" onChange={(e) => handleChange(e, setFormData)} required />
-                    <input type="email" name="email" placeholder="E-mail" autoComplete="off" onChange={(e) => handleChange(e, setFormData)}  required />
-                    <input type="text" name="tel" placeholder="Телефон" autoComplete="off" onChange={(e) => handleChange(e, setFormData)} required />
-                    <textarea placeholder='Сообщение' name="message" id="message" onChange={(e) => handleChange(e, setFormData)} maxLength={200}></textarea>
+                    <div>
+                        <input type="text" placeholder='Имя' {...register('name', { required: true })} />
+                        {errors.name && <span>{`${errors.name.message}`}</span>}
+                    </div>
+                    <div>
+                        <input type="email" placeholder='E-mail' {...register('email', { required: true })} />
+                        {errors.email && <span>{`${errors.email.message}`}</span>}
+                    </div>
+                    <div>
+                        <input type="text" placeholder='Телефон' {...register('tel', { required: true })} />
+                        {errors.tel && <span>{`${errors.tel.message}`}</span>}
+                    </div>
+                    <textarea placeholder='Комментарий' {...register('message')} />
                     <button className='action main' type="submit">{onLoadingResponseData ? <img style={{maxHeight: "20px"}} src="/images/loadingGif.gif" alt="Loading"></img>: 'Отправить'}</button>
                     <div className={`response ${formResponseData.length ? 'active': ''}`}>{formResponseData}</div>
                 </form>

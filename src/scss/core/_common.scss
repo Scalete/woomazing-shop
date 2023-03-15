@@ -115,6 +115,13 @@ footer {
     }
 }
 
+input + span {
+    display: block;
+    margin-top: 10px;
+    color: $brand-color-red;
+    text-align: left;
+}
+
 span {
     &.brown {
         color: $color-product-brown;
