@@ -13,14 +13,6 @@
         letter-spacing: 0.02em;
     }
 
-    input {
-        margin-bottom: 35px;
-
-        &:last-child {
-            margin-bottom: 0;
-        }
-    }
-
     &-details {
         min-width: 350px;
     }
@@ -32,6 +24,24 @@
 
         &:last-child {
             margin-bottom: 0;
+        }
+
+        div {
+            margin-bottom: 35px;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+
+            input {
+                width: 100%;
+
+                + span {
+                    display: block;
+                    margin-top: 10px;
+                    color: $brand-color-red;
+                }
+            }
         }
     }
 

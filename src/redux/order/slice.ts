@@ -33,6 +33,9 @@ export const orderSlice = createSlice({
     name: 'order',
     initialState,
     reducers: {
+        resetStatus(state) {
+            state.status = Status.LOADING;
+        }
     },
     extraReducers: (builder) => {
         builder

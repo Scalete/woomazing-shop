@@ -8,7 +8,7 @@ import { TitleBreadcrumbs } from '../components/TitleBreadcrumbs';
 import { clearCart, deleteCartItem, resetStatus, useCartProducts } from '../redux/cart/selectors';
 import { Status } from '../redux/globalIntefaces';
 import { useAppDispatch } from '../redux/store';
-import { calcTotalSum, calculateDiscount } from '../utils/helperFunctions';
+import { calcTotalSum } from '../utils/helperFunctions';
 
 export const Cart: React.FC = () => {
 
