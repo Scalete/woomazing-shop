@@ -13,6 +13,7 @@ import { calcTotalSum, calculateDiscount } from '../utils/helperFunctions';
 import { Empty } from './Empty';
 import * as yup from "yup";
 import { yupResolver } from '@hookform/resolvers/yup';
+import { HelmetComponent } from '../components/HelmetComponent';
 
 export const Checkout: React.FC = () => {
 
@@ -101,7 +102,7 @@ export const Checkout: React.FC = () => {
     return (
         <>
             <TitleBreadcrumbs title='Оформление заказа' breadcrumbs={[{link: '/', name: 'Главная'}, {link: '/checkout', name: 'Оформление заказа'}]}/>
-                
+            <HelmetComponent title='Оформление заказа' description='Страница оформления заказа'/>
             <section className="checkout">
                 <div className="container">
                 {!cartProducts.length && !isOrder.current? <Empty text='Добавте хоть один продукт в корзину'/>: cartProducts.length ?  (

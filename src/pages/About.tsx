@@ -1,10 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { HelmetComponent } from '../components/HelmetComponent';
 import { TitleBreadcrumbs } from '../components/TitleBreadcrumbs';
 
 export const About: React.FC = () => {
     return (
         <>
+            <HelmetComponent title='О бренде' description='Страница о бренде'/>
             <TitleBreadcrumbs title='О бренде' breadcrumbs={[{link: '/', name: 'Главная'}, {link: '/', name: 'О бренде'}]}/>
             <section className="about">
                 <div className="container">

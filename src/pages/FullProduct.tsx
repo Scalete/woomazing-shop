@@ -8,6 +8,7 @@ import { useSelector } from 'react-redux';
 import { useAppDispatch } from '../redux/store';
 import { useLocation } from 'react-router-dom';
 import { fetchProduct } from '../redux/full-product/asyncActions';
+import { HelmetComponent } from '../components/HelmetComponent';
 
 export const FullProduct: React.FC = () => {
 
@@ -23,6 +24,7 @@ export const FullProduct: React.FC = () => {
 
     return (
         <>
+            <HelmetComponent title={product.title} description={`Продукт: ${product.title}`}/>
             <TitleBreadcrumbs title={product.title} breadcrumbs={[{link: '/', name: 'Главная'}, {link: '/shop', name: 'Магазин'}, {link: '/', name: product.title}]}/>
             <FullProductComponent _id={_id} imgUrl={product.imgUrl} title={product.title} price={product.price} discount={product.discount} />
             <TitleProducts title='Связанные товары' asyncFunc={() => fetchRelativeProducts({_id: _id})}/>

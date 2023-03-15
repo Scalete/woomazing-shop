@@ -9,6 +9,7 @@ import { clearCart, deleteCartItem, resetStatus, useCartProducts } from '../redu
 import { Status } from '../redux/globalIntefaces';
 import { useAppDispatch } from '../redux/store';
 import { calcTotalSum } from '../utils/helperFunctions';
+import { HelmetComponent } from '../components/HelmetComponent';
 
 export const Cart: React.FC = () => {
 
@@ -49,7 +50,7 @@ export const Cart: React.FC = () => {
     return (
         <>
             <TitleBreadcrumbs title='Корзина' breadcrumbs={[{link: '/', name: 'Главная'}, {link: '/cart', name: 'Корзина'}]}/>
-            
+            <HelmetComponent title='Корзина' description='Страница с вашими товарами'/>
             <section className="cart">
                 <div className="container">
                     {
