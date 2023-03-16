@@ -6,9 +6,9 @@ export const Menu: React.FC = () => {
         <nav>
             <ul className="menu">
                 <li><NavLink className='hover-underline-animation' to="/woomazing-shop">Главная</NavLink></li>
-                <li><NavLink className='hover-underline-animation' to="/woomazing-shop/shop">Магазин</NavLink></li>
-                <li><NavLink className='hover-underline-animation' to="/woomazing-shop/about">О бренде</NavLink></li>
-                <li><NavLink className='hover-underline-animation' to="/woomazing-shop/contacts">Контакты</NavLink></li>
+                <li><NavLink className='hover-underline-animation' to="shop">Магазин</NavLink></li>
+                <li><NavLink className='hover-underline-animation' to="about">О бренде</NavLink></li>
+                <li><NavLink className='hover-underline-animation' to="contacts">Контакты</NavLink></li>
             </ul>
         </nav>
     );
