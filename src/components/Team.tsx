@@ -15,7 +15,7 @@ export const Team: React.FC = () => {
                         <h3>Для каждой</h3>
                         <p>Каждая девушка уникальна. Однако, мы схожи в миллионе мелочей.</p>
                         <p>Womazing ищет эти мелочи и создает прекрасные вещи, которые выгодно подчеркивают достоинства каждой девушки.</p>
-                        <Link to='/about' className='hover-underline-animation'>Подробнее о бренде</Link>
+                        <Link to='/woomazing-shop/about' className='hover-underline-animation'>Подробнее о бренде</Link>
                     </div>
                 </div>
             </div>

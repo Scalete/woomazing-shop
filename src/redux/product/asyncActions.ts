@@ -11,7 +11,7 @@ export const fetchProducts = createAsyncThunk<IFilteredProducts, IFilterProducts
             foundProducts: IFilteredProducts;
         }
   
-        const { data } = await axios.get<AxiosProp>(`http://localhost:3001/products/filters?name=${category}&page=${page}`);
+        const { data } = await axios.get<AxiosProp>(`${process.env.REACT_APP_SERVER_URL}products/filters?name=${category}&page=${page}`);
 
         return data.foundProducts;
     }
@@ -26,7 +26,7 @@ export const fetchNewCollectionsProducts = createAsyncThunk<ProductItem[]>(
             foundProducts: ProductItem[];
         }
   
-        const { data } = await axios.get<AxiosProp>(`http://localhost:3001/products/new-collection`);
+        const { data } = await axios.get<AxiosProp>(`${process.env.REACT_APP_SERVER_URL}products/new-collection`);
 
         return data.foundProducts;
     }
@@ -41,7 +41,7 @@ export const fetchRelativeProducts = createAsyncThunk<ProductItem[], IRelativePr
             foundProducts: ProductItem[];
         }
   
-        const { data } = await axios.get<AxiosProp>(`http://localhost:3001/products/relative?_id=${_id}`);
+        const { data } = await axios.get<AxiosProp>(`${process.env.REACT_APP_SERVER_URL}products/relative?_id=${_id}`);
         
         return data.foundProducts;
     }

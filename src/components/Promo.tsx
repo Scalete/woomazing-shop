@@ -20,7 +20,7 @@ export const Promo: React.FC = () => {
                     <SwiperPromo textContent={textContent} text={true} thumbsSwiper={thumbsSwiper}/>
                     <div className="promo-action-container">
                         <a href="#title-products" className="action arrow"><svg width="16" height="29" viewBox="0 0 16 29" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8 0v28m0 0-7-7.19M8 28l7-7.19" stroke="#6E9C9F"/></svg></a>
-                        <Link to="/shop" className="action main">Открыть магазин</Link>
+                        <Link to="/woomazing-shop/shop" className="action main">Открыть магазин</Link>
                     </div>
                 </div>
                 <div className="promo-image-slider">

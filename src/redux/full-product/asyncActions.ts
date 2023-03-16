@@ -11,7 +11,7 @@ export const fetchProduct = createAsyncThunk(
             foundProduct: ProductItem[];
         }
   
-        const { data } = await axios.get<AxiosProp>(`http://localhost:3001/products/product-info?_id=${_id}`);
+        const { data } = await axios.get<AxiosProp>(`${process.env.REACT_APP_SERVER_URL}products/product-info?_id=${_id}`);
 
         return data.foundProduct;
     }

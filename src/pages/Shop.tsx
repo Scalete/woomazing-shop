@@ -9,7 +9,7 @@ export const Shop = () => {
     return (
         <>
             <HelmetComponent title='Магазин' description='Страница магазина'/>
-            <TitleBreadcrumbs title='Магазин' breadcrumbs={[{link: '/', name: 'Главная'}, {link: '/shop', name: 'Магазин'}]}/>
+            <TitleBreadcrumbs title='Магазин' breadcrumbs={[{link: '/woomazing-shop', name: 'Главная'}, {link: '/woomazing-shop/shop', name: 'Магазин'}]}/>
             <Filter/>
             <Products/>
             <Pagination/>

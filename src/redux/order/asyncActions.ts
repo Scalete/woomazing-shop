@@ -11,7 +11,7 @@ export const postOrder = createAsyncThunk<string, IOrderItem>(
             order: IOrderItem;
         }
   
-        const { data } = await axios.post<AxiosProp>(`http://localhost:3001/order`, order);
+        const { data } = await axios.post<AxiosProp>(`${process.env.REACT_APP_SERVER_URL}order`, order);
 
         return data.message;
     }

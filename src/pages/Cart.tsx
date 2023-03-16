@@ -49,7 +49,7 @@ export const Cart: React.FC = () => {
 
     return (
         <>
-            <TitleBreadcrumbs title='Корзина' breadcrumbs={[{link: '/', name: 'Главная'}, {link: '/cart', name: 'Корзина'}]}/>
+            <TitleBreadcrumbs title='Корзина' breadcrumbs={[{link: '/woomazing-shop', name: 'Главная'}, {link: '/woomazing-shop/cart', name: 'Корзина'}]}/>
             <HelmetComponent title='Корзина' description='Страница с вашими товарами'/>
             <section className="cart">
                 <div className="container">
@@ -69,7 +69,7 @@ export const Cart: React.FC = () => {
                                         <span>Подытог: ${calcTotalSum(cartProducts)}</span>
                                         <div className="actions-wrapper">
                                             <div className="total"><span>Итого:</span><span>${calcTotalSum(cartProducts)}</span></div>
-                                            <Link to={'/checkout'} className="action main">Оформить заказ</Link>
+                                            <Link to={'/woomazing-shop/checkout'} className="action main">Оформить заказ</Link>
                                         </div>
                                     </div>
                                 </div>

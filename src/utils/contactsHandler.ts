@@ -12,7 +12,7 @@ export const handleSubmitForm = (setOnLoadingResponseData: React.Dispatch<React.
 
     if(!cookieValue) {
         setOnLoadingResponseData(true);
-        const { data } = await axios.post<AxiosProp>(`http://localhost:3001/form-data`, dataForm);
+        const { data } = await axios.post<AxiosProp>(`${process.env.REACT_APP_SERVER_URL}form-data`, dataForm);
 
         Cookies.set('contact-form-date', 'true', { expires: 1 });
         setformResponseData(data.message);

@@ -7,7 +7,7 @@ export const About: React.FC = () => {
     return (
         <>
             <HelmetComponent title='О бренде' description='Страница о бренде'/>
-            <TitleBreadcrumbs title='О бренде' breadcrumbs={[{link: '/', name: 'Главная'}, {link: '/', name: 'О бренде'}]}/>
+            <TitleBreadcrumbs title='О бренде' breadcrumbs={[{link: '/woomazing-shop', name: 'Главная'}, {link: '/woomazing-shop', name: 'О бренде'}]}/>
             <section className="about">
                 <div className="container">
                     <div className="about-wrapper">
@@ -26,7 +26,7 @@ export const About: React.FC = () => {
                         </div>
                         <img src="/images/about/white-cloth.jpg" alt="Woman In White Clothes" />
                     </div>
-                    <Link to='/shop' className="action main">Перейти в магазин</Link>
+                    <Link to='/woomazing-shop/shop' className="action main">Перейти в магазин</Link>
                 </div>
             </section>
         </>
