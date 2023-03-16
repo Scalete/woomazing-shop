@@ -26,7 +26,7 @@ export const FullProduct: React.FC = () => {
         <>
             <HelmetComponent title={product.title} description={`Продукт: ${product.title}`}/>
             <TitleBreadcrumbs title={product.title} breadcrumbs={[{link: '/', name: 'Главная'}, {link: '/woomazing-shop/shop', name: 'Магазин'}, {link: '/woomazing-shop', name: product.title}]}/>
-            <FullProductComponent _id={_id} imgUrl={product.imgUrl} title={product.title} price={product.price} discount={product.discount} />
+            <FullProductComponent _id={_id} imgUrl={process.env.REACT_APP_PUBLIC_URL + product.imgUrl} title={product.title} price={product.price} discount={product.discount} />
             <TitleProducts title='Связанные товары' asyncFunc={() => fetchRelativeProducts({_id: _id})}/>
         </>
     );
