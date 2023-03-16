@@ -34,34 +34,34 @@ const App: React.FC = () => {
             <main>
                 <Routes>
                     <Route
-                    path="/"
+                    path="/woomazing-shop"
                     element={<Main />}
                     />
                     <Route
-                    path="/shop"
+                    path="/woomazing-shop/shop"
                     element={<Shop />}
                     />
                     <Route
-                    path="/product"
+                    path="/woomazing-shop/product"
                     element={<FullProduct />}
                     />
                     <Route
-                    path="/about"
+                    path="/woomazing-shop/about"
                     element={<About />}
                     />
                     <Route
-                    path="/contacts"
+                    path="/woomazing-shop/contacts"
                     element={<Contact />}
                     />
                     <Route
-                    path="/cart"
+                    path="/woomazing-shop/cart"
                     element={<Cart />}
                     />
                     <Route
-                    path="/checkout"
+                    path="/woomazing-shop/checkout"
                     element={<Checkout />}
                     />
-                    <Route path="*" element={<NotFoundPage />} />
+                    <Route path="/woomazing-shop/*" element={<NotFoundPage />} />
                 </Routes>
             </main>
             <Footer/>
