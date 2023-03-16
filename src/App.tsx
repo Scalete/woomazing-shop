@@ -61,7 +61,7 @@ const App: React.FC = () => {
                     path="/woomazing-shop/checkout"
                     element={<Checkout />}
                     />
-                    <Route path="/woomazing-shop/*" element={<NotFoundPage />} />
+                    <Route element={<NotFoundPage />} />
                 </Routes>
             </main>
             <Footer/>
