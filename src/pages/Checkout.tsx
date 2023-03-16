@@ -62,7 +62,7 @@ export const Checkout: React.FC = () => {
                         <h3>Заказ успешно оформлен</h3>
                         <p>Мы свяжемся с вами в ближайшее время!</p>
                     </div>
-                    <Link to='/woomazing-shop' className="action second">Перейти на главную</Link>
+                    <Link to={`${process.env.REACT_APP_HOME_URL}`} className="action second">Перейти на главную</Link>
                 </div>
             )
         }
@@ -101,7 +101,7 @@ export const Checkout: React.FC = () => {
 
     return (
         <>
-            <TitleBreadcrumbs title='Оформление заказа' breadcrumbs={[{link: '/woomazing-shop', name: 'Главная'}, {link: '/woomazing-shop/checkout', name: 'Оформление заказа'}]}/>
+            <TitleBreadcrumbs title='Оформление заказа' breadcrumbs={[{link: `${process.env.REACT_APP_HOME_URL}`, name: 'Главная'}, {link: `${process.env.REACT_APP_HOME_URL}checkout`, name: 'Оформление заказа'}]}/>
             <HelmetComponent title='Оформление заказа' description='Страница оформления заказа'/>
             <section className="checkout">
                 <div className="container">

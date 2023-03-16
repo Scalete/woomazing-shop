@@ -55,7 +55,7 @@ export const ContactForm: React.FC<IDataFormProps> = ({activeForm, setActiveForm
                                 <input type="text" placeholder='Телефон' {...register('tel', { required: true })} />
                                 {errors.tel && <span>{`${errors.tel.message}`}</span>}
                             </div>
-                            <button className='action main' type="submit">{onLoadingResponseData ? <img style={{maxHeight: "20px"}} src={`${process.env.REACT_APP_PUBLIC_URL}/images/loadingGif.gif`} alt="Loading"></img>: 'Заказать звонок'}</button>
+                            <button className='action main' type="submit">{onLoadingResponseData ? <img style={{maxHeight: "20px"}} src={`${process.env.REACT_APP_PUBLIC_URL}images/loadingGif.gif`} alt="Loading"></img>: 'Заказать звонок'}</button>
                         </>
                     )
                 }

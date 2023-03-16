@@ -58,7 +58,7 @@ export const ContactComponent: React.FC = () => {
                         {errors.tel && <span>{`${errors.tel.message}`}</span>}
                     </div>
                     <textarea placeholder='Комментарий' {...register('message')} />
-                    <button className='action main' type="submit">{onLoadingResponseData ? <img style={{maxHeight: "20px"}} src={`${process.env.REACT_APP_PUBLIC_URL}/images/loadingGif.gif`} alt="Loading"></img>: 'Отправить'}</button>
+                    <button className='action main' type="submit">{onLoadingResponseData ? <img style={{maxHeight: "20px"}} src={`${process.env.REACT_APP_PUBLIC_URL}images/loadingGif.gif`} alt="Loading"></img>: 'Отправить'}</button>
                     <div className={`response ${formResponseData.length ? 'active': ''}`}>{formResponseData}</div>
                 </form>
             </div>

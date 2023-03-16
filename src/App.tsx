@@ -34,31 +34,31 @@ const App: React.FC = () => {
             <main>
                 <Routes>
                     <Route
-                    path="/woomazing-shop"
+                    path={`${process.env.REACT_APP_HOME_URL}`}
                     element={<Main />}
                     />
                     <Route
-                    path="/woomazing-shop/shop"
+                    path={`${process.env.REACT_APP_HOME_URL}shop`}
                     element={<Shop />}
                     />
                     <Route
-                    path="/woomazing-shop/product"
+                    path={`${process.env.REACT_APP_HOME_URL}product`}
                     element={<FullProduct />}
                     />
                     <Route
-                    path="/woomazing-shop/about"
+                    path={`${process.env.REACT_APP_HOME_URL}about`}
                     element={<About />}
                     />
                     <Route
-                    path="/woomazing-shop/contacts"
+                    path={`${process.env.REACT_APP_HOME_URL}contacts`}
                     element={<Contact />}
                     />
                     <Route
-                    path="/woomazing-shop/cart"
+                    path={`${process.env.REACT_APP_HOME_URL}cart`}
                     element={<Cart />}
                     />
                     <Route
-                    path="/woomazing-shop/checkout"
+                    path={`${process.env.REACT_APP_HOME_URL}checkout`}
                     element={<Checkout />}
                     />
                     <Route element={<NotFoundPage />} />

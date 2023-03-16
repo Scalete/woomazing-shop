@@ -44,7 +44,7 @@ export const Header: React.FC<IDataFormProps> = ({setActiveForm}) => {
                         </button>
                         <a className='hover-underline-animation' href="tel:+380999051727">+38 (099) 905-17-27</a>
                     </div>
-                    <Link to="/woomazing-shop/cart" className="header-basket">
+                    <Link to={`${process.env.REACT_APP_HOME_URL}cart`} className="header-basket">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M23.845 8.224a.533.533 0 0 0-.444-.148h-6.367V5.263a5.034 5.034 0 1 0-10.068 0v2.813H.599c-.178 0-.355 0-.444.148a.504.504 0 0 0-.148.445l2.22 12.141a3.613 3.613 0 0 0 3.495 2.961h12.556a3.642 3.642 0 0 0 3.494-2.99l2.221-12.112a.503.503 0 0 0-.148-.445ZM8.15 5.263a3.85 3.85 0 0 1 7.7 0v2.813h-7.7V5.263Zm12.438 15.37a2.37 2.37 0 0 1-2.31 1.954H5.722a2.37 2.37 0 0 1-2.31-1.955L1.31 9.261h21.38l-2.102 11.371Z" fill="#000"/><path d="M16.442 15.035a.592.592 0 0 0 .592-.592v-1.777a.592.592 0 1 0-1.184 0v1.777c0 .327.265.592.592.592ZM7.558 15.035a.592.592 0 0 0 .592-.592v-1.777a.592.592 0 1 0-1.184 0v1.777c0 .327.265.592.592.592Z" fill="#000"/></svg>
                         <span>{cartProducts.length ? cartProducts.map(item => item.count).reduce((sum, item) => sum + item): 0}</span>
                     </Link>

@@ -12,7 +12,7 @@ export const Main: React.FC = () => {
         <>
             <HelmetComponent title='Главная' description='Главная страница'/>
             <Promo/>
-            <TitleProducts title='Новая коллекция' asyncFunc={fetchNewCollectionsProducts} button={<Link to="/woomazing-shop/shop" className="action second">Открыть магазин</Link>}/>
+            <TitleProducts title='Новая коллекция' asyncFunc={fetchNewCollectionsProducts} button={<Link to={`${process.env.REACT_APP_HOME_URL}shop`} className="action second">Открыть магазин</Link>}/>
             <Functions/>
             <Team/>
         </>

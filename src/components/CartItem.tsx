@@ -28,7 +28,7 @@ export const CartItem: React.FC<CartItemProps> = ({_cartId, _id, imgUrl, title, 
             <li className="cart-cell">
                 <svg onClick={() => onDeleteItem(_cartId)} width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="m1 1 12 12m0-12L1 13" stroke="#000"/></svg>
                 <img src={imgUrl} alt="Product Info" />
-                <Link className='hover-underline-animation' to={`/woomazing-shop/product?_id=${_id}`}>{title}, <br /> <span className={extraOptions.color}>{renderCartColors(extraOptions.color)}</span>, <strong style={{fontWeight: '700'}}>{extraOptions.size}</strong></Link>
+                <Link className='hover-underline-animation' to={`${process.env.REACT_APP_HOME_URL}product?_id=${_id}`}>{title}, <br /> <span className={extraOptions.color}>{renderCartColors(extraOptions.color)}</span>, <strong style={{fontWeight: '700'}}>{extraOptions.size}</strong></Link>
             </li>
             <li className="cart-cell">
                 <span>${discount ? calculateDiscount(price, discount): price}</span>
