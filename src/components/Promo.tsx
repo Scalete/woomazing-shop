@@ -8,7 +8,7 @@ export const Promo: React.FC = () => {
         ['Что-то новенькое. Мы заждались тебя.', 'Надоело искать себя в сером городе? Настало время новых идей, свежих красок и вдохновения с Womazing!'],
         ['Новые поступления в этом сезоне', 'Утонченные сочетания и бархатные оттенки - вот то, что вы искали в этом сезоне. Время исследовать.']
     ];
-    const imgContent: string[] = ['/images/slider/1.jpg', '/images/slider/1.jpg', '/images/slider/1.jpg'];
+    const imgContent: string[] = [`${process.env.REACT_APP_PUBLIC_URL}/images/slider/1.jpg`, `${process.env.REACT_APP_PUBLIC_URL}/images/slider/1.jpg`, `${process.env.REACT_APP_PUBLIC_URL}/images/slider/1.jpg`];
 
     const [thumbsSwiper, setThumbsSwiper] = React.useState(null);
 
@@ -24,8 +24,8 @@ export const Promo: React.FC = () => {
                     </div>
                 </div>
                 <div className="promo-image-slider">
-                    <img src="/images/promo/decorate-1.jpg" alt="Decorate Promo" className="promo-decorate promo-decorate-first" />
-                    <img src="/images/promo/decorate-2.jpg" alt="Decorate Promo" className="promo-decorate promo-decorate-second" />
+                    <img src={`${process.env.REACT_APP_PUBLIC_URL}/images/promo/decorate-1.jpg`} alt="Decorate Promo" className="promo-decorate promo-decorate-first" />
+                    <img src={`${process.env.REACT_APP_PUBLIC_URL}/images/promo/decorate-2.jpg`} alt="Decorate Promo" className="promo-decorate promo-decorate-second" />
                     <SwiperPromo imgContent={imgContent} text={false} setThumbsSwiper={setThumbsSwiper}/>
                 </div>
             </div>

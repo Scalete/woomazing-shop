@@ -22,15 +22,15 @@ const SwiperTeam = () => {
             lazy
         >
             <SwiperSlide>
-                <img className="swiper-lazy" data-src="/images/slider/team/1.jpg" alt="Team Slide" />
+                <img className="swiper-lazy" data-src={`${process.env.REACT_APP_PUBLIC_URL}/images/slider/team/1.jpg`} alt="Team Slide" />
                 <div className="swiper-lazy-preloader"></div>
             </SwiperSlide>
             <SwiperSlide>
-                <img className="swiper-lazy" data-src="/images/slider/team/2.jpg" alt="Team Slide" />
+                <img className="swiper-lazy" data-src={`${process.env.REACT_APP_PUBLIC_URL}/images/slider/team/2.jpg`} alt="Team Slide" />
                 <div className="swiper-lazy-preloader"></div>
             </SwiperSlide>
             <SwiperSlide>
-                <img className="swiper-lazy" data-src="/images/slider/team/3.jpg" alt="Team Slide" />
+                <img className="swiper-lazy" data-src={`${process.env.REACT_APP_PUBLIC_URL}/images/slider/team/3.jpg`} alt="Team Slide" />
                 <div className="swiper-lazy-preloader"></div>
             </SwiperSlide>
         </Swiper>
