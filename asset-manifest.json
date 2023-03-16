@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/woomazing-shop/static/css/main.c61b11f5.css",
+    "main.js": "/woomazing-shop/static/js/main.fd26a672.js",
+    "index.html": "/woomazing-shop/index.html",
+    "main.c61b11f5.css.map": "/woomazing-shop/static/css/main.c61b11f5.css.map",
+    "main.fd26a672.js.map": "/woomazing-shop/static/js/main.fd26a672.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.c61b11f5.css",
+    "static/js/main.fd26a672.js"
+  ]
+}
