@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/woomazing-shop/static/css/main.c61b11f5.css",
-    "main.js": "/woomazing-shop/static/js/main.645b994f.js",
+    "main.js": "/woomazing-shop/static/js/main.eb8694a8.js",
     "index.html": "/woomazing-shop/index.html",
     "main.c61b11f5.css.map": "/woomazing-shop/static/css/main.c61b11f5.css.map",
-    "main.645b994f.js.map": "/woomazing-shop/static/js/main.645b994f.js.map"
+    "main.eb8694a8.js.map": "/woomazing-shop/static/js/main.eb8694a8.js.map"
   },
   "entrypoints": [
     "static/css/main.c61b11f5.css",
-    "static/js/main.645b994f.js"
+    "static/js/main.eb8694a8.js"
   ]
 }
