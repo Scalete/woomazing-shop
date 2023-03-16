@@ -21,7 +21,7 @@ export const Header: React.FC<IDataFormProps> = ({setActiveForm}) => {
     React.useEffect(() => {
         if (isMounted.current) {
             const json = JSON.stringify(cartProducts);
-            localStorage.setItem('cart', json);
+            localStorage.setItem('woomazing-cart', json);
         }
         isMounted.current = true;
     }, [cartProducts]);

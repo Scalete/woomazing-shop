@@ -10,7 +10,7 @@ export const calculateDiscount = (price: number, discount: number) => {
 }
 
 export function getCartFromLS(): ICartItem[] {
-    const data = localStorage.getItem('cart');
+    const data = localStorage.getItem('woomazing-cart');
     return data? JSON.parse(data): [];
 }
 
