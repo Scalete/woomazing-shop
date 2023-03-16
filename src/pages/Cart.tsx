@@ -18,7 +18,7 @@ export const Cart: React.FC = () => {
     const dispatch = useAppDispatch();
 
     const renderProducts = () => {
-        return cartProducts.map((item, i) => <CartItem key={i} _cartId={i} _id={item.product._id as string} imgUrl={item.product.imgUrl} title={item.product.title} discount={item.product.discount} price={item.product.price} count={item.count} extraOptions={item.extraOptions} onDeleteItem={onDeleteItem}/>);
+        return cartProducts.map((item, i) => <CartItem key={i} _cartId={i} _id={item.product._id as string} imgUrl={process.env.REACT_APP_PUBLIC_URL + item.product.imgUrl} title={item.product.title} discount={item.product.discount} price={item.product.price} count={item.count} extraOptions={item.extraOptions} onDeleteItem={onDeleteItem}/>);
     }
 
     React.useEffect(() => {
