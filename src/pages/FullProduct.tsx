@@ -25,7 +25,7 @@ export const FullProduct: React.FC = () => {
     return (
         <>
             <HelmetComponent title={product.title} description={`Продукт: ${product.title}`}/>
-            <TitleBreadcrumbs title={product.title} breadcrumbs={[{link: '/', name: 'Главная'}, {link: `${process.env.REACT_APP_HOME_URL}shop`, name: 'Магазин'}, {link: `${process.env.REACT_APP_HOME_URL}`, name: product.title}]}/>
+            <TitleBreadcrumbs title={product.title} breadcrumbs={[{link: `${process.env.REACT_APP_HOME_URL}`, name: 'Главная'}, {link: `${process.env.REACT_APP_HOME_URL}shop`, name: 'Магазин'}, {link: `${process.env.REACT_APP_HOME_URL}`, name: product.title}]}/>
             <FullProductComponent _id={_id} imgUrl={process.env.REACT_APP_PUBLIC_URL + product.imgUrl} title={product.title} price={product.price} discount={product.discount} />
             <TitleProducts title='Связанные товары' asyncFunc={() => fetchRelativeProducts({_id: _id})}/>
         </>
